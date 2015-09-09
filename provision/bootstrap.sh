@@ -129,16 +129,16 @@ if [[ $ping_result == *bytes?from* ]]; then
     fi
 
     # Start nginx server
-    echo "Starting nginx server"
+    # echo "Starting nginx server"
 
-    service nginx status  # to poll for current status
-    sudo service nginx stop    # to stop any servers if any
-    sudo service nginx start   # to start the server
+    # service nginx status       # to get the current status
+    # sudo service nginx stop    # to stop any servers if any
+    # sudo service nginx start   # to start the server
 
-    node /usr/share/nodejs/app.js
+    # node /usr/share/nodejs/app.js
 
 else
-	echo -e "\nNo network connection available, skipping package installation"
+    echo -e "\nNo network connection available, skipping package installation"
 fi
 
 end_seconds="$(date +%s)"

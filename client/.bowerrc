@@ -1,5 +1,5 @@
 {
-  "directory": "vendor",
+  "directory": "app/bower_components",
   "analytics": false,
   "color": true,
   "interactive": false

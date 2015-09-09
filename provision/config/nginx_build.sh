@@ -50,6 +50,6 @@ sudo mv ~/tmp/nginx_source/temp_rules ~/tmp/nginx_source/nginx-${NGX_VERSION}/de
 cd ~/tmp/nginx_source/nginx-${NGX_VERSION}
 sudo dpkg-buildpackage -b
 
-#sudo dpkg -i ~tmp/nginx_source/nginx_${NGX_VERSION}-1~trusty_amd64.deb
+sudo dpkg -i ~tmp/nginx_source/nginx_${NGX_VERSION}-1~trusty_amd64.deb
 
-#rm -R ~/temp
+rm -R ~/temp
