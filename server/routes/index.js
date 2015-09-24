@@ -8,7 +8,18 @@ var express = require('express'),
 var router = express.Router();
 
 router.get('/games', function (req, res, next) {
-    var filePath = path.join(__dirname, 'games.json');
+    var filePath = path.join(__dirname, '../dummy/games.json');
+    var stat = fileSystem.statSync(filePath);
+    res.writeHead(200, {
+        'content-type': 'application/json',
+        'content-length': stat.size
+    });
+    var readStream = fileSystem.createReadStream(filePath);
+    readStream.pipe(res);
+});
+
+router.get('/games/:id', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/game.json');
     var stat = fileSystem.statSync(filePath);
     res.writeHead(200, {
         'content-type': 'application/json',

@@ -1,0 +1,9 @@
+<div class = "game_list container-fluid">
+    <div class = "row">
+        <div class = "col-xs-4 col-md-2" ng-repeat = "game in games.list">
+            <a ng-href = "#/games/{{game.id}}" class = "thumbnail">
+                <img src = "images/no_image.jpg" alt = "{{game.name}}">
+            </a>
+        </div>
+    </div>
+</div>

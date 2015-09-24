@@ -23,3 +23,9 @@ v0.0.2
 * Added a listing of dummy games
 * Added a game cover without cover
 * Added a dummy counter for games, books and comics
+
+v.0.0.3
+
+* Added some angular logic, created controllers and factories for common functions and games
+* Added more static filetypes in nginx.conf
+* Added Angular-bootstrap for some bootstrap based angular components

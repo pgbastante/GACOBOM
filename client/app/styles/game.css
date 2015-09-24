@@ -1,0 +1,26 @@
+.metacritic {
+    color: #FFFFFF;
+    font-size: 15px;
+    border-style: solid;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: 9px;
+
+}
+
+.metacritic-positive {
+    background-color: #66cc33;
+}
+
+.metacritic-neutral {
+    background-color: #ffcc33;
+}
+
+.metacritic-negative {
+    background-color: #ff0000;
+}
+
+.rating {
+    text-align: center;
+    padding-top: 10px;
+}

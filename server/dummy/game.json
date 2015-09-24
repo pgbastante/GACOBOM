@@ -1,0 +1,174 @@
+{
+  "id": 1,
+  "title": "DOOM II",
+  "subtitle": "Hell on Earth",
+  "cover": "",
+  "description": "<p>In this sequel to the original Doom, you play the same hero - the last remaining space marine. After having single-handedly saved Mars from demonic threat, you return to Earth, only to find out that the demons have already invaded it, killed most of its inhabitants or possessed them. It's your task to bring down the force field around the last operational star port to allow the remnants of mankind to escape to the stars.</p><p>Doom II looks and plays very similarly to its predecessor, utilizing the same 3D graphical engine with 2D sprites for enemies. The game play once again consists entirely of navigating the hero from first-person view through 3D environments and shooting at the demons while attempting to find your way out by flipping switches and looking for keys. Unlike in Doom, which is divided into three episodes, the 30 levels of Doom II (plus the 2 secret levels) form one long episode.</p><p>Doom II adds one new weapon to the players arsenal; the super shotgun, several new demon types with more advanced attacks than those of the first Doom, such as the chaingun-toting Heavy Weapon Dudes, the skeletal Revenants who launch homing missiles and the sinister Arch-Viles who have a highly damaging fire attack.</p>",
+  "series": {
+    "id": 1,
+    "name": "Doom",
+    "order": 2
+  },
+  "manual": "",
+  "publishers": [
+    {
+      "id": 1,
+      "name": "Gt Interactive Software Corp."
+    },
+    {
+      "id": 2,
+      "name": "CDV Software GmbH"
+    }
+  ],
+  "developers": [
+    {
+      "id": 1,
+      "name": "id Software, Inc."
+    }
+  ],
+  "path": "",
+  "released": 781747200,
+  "rating": {
+    "id": 1,
+    "name": "Mature"
+  },
+  "genre": {
+    "id": 2,
+    "name": "Action"
+  },
+  "gameplay": {
+    "id": 1,
+    "name": "Shooter"
+  },
+  "pacing": {
+    "id": 1,
+    "name": "Real-Time"
+  },
+  "presentation": {
+    "id": 1,
+    "name": "First-Person Perspective"
+  },
+  "interface-control": {
+    "id": 1,
+    "name": "Direct Control"
+  },
+  "metascore": 85,
+  "score": 10,
+  "trivia": [
+    {
+      "id": 1,
+      "title": "1001 Video Games",
+      "text": "<p>Doom II: Hell on Earth appears in the book 1001 Video Games You Must Play Before You Die by General Editor Tony Mott.</p>"
+    },
+    {
+      "id": 2,
+      "title": "Arcade Version",
+      "text": "<p>In the 1997 film Grosse Point Blank a store clerk can be seen playing on a DOOM II arcade cabinet. An arcade version was however never released and the game seen in the film is a film prop with a PC inside.</p>"
+    },
+    {
+      "id": 3,
+      "title": "Boss' Sound File",
+      "text": "<p>If you play the boss' sound file backwards, it says 'To win the game, you must beat me, John Romero.' John Romero is one of the developers.</p>"
+    }
+  ],
+  "Media": [
+    {
+      "id": 1,
+      "file": "",
+      "text": "",
+      "type": "video"
+    },
+    {
+      "id": 2,
+      "file": "",
+      "text": "",
+      "type": "image"
+    },
+    {
+      "id": 3,
+      "file": "",
+      "text": "",
+      "type": "video"
+    },
+    {
+      "id": 4,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 5,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 6,
+      "file": "",
+      "text": ""
+    }
+  ],
+  "artwork": [
+    {
+      "id": 1,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 2,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 3,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 4,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 5,
+      "file": "",
+      "text": ""
+    },
+    {
+      "id": 6,
+      "file": "",
+      "text": ""
+    }
+  ],
+  "links": [
+    {
+      "mobygames": "http://www.mobygames.com/game/doom-ii_",
+      "gamefaqs": "http://www.gamefaqs.com/pc/197142-doom-ii",
+      "steam": "http://store.steampowered.com/app/2300/"
+    }
+  ],
+  "credits": [
+    {
+      "id": 1,
+      "name": "John Romero",
+      "roles": [
+        {
+          "id": 1,
+          "name": "Level Designer"
+        },
+        {
+          "id": 2,
+          "name": "Programmer"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "John Carmack",
+      "roles": [
+        {
+          "id": 2,
+          "name": "Programmer"
+        }
+      ]
+    }
+  ]
+}

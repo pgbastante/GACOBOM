@@ -1,0 +1,66 @@
+.game_list {
+    padding: 80px 15px;
+}
+
+.game_main_form {
+    padding: 30px 15px;
+}
+
+.game_thumbnail {
+    width: 165px;
+    height: auto;
+}
+
+.cover_thumbnail {
+    width: 107px;
+    height: auto;
+}
+
+.tab_container {
+    padding-top: 20px;
+    display: inline;
+}
+
+.tablist {
+    padding-top: 20px;
+}
+
+.ok-check {
+    color: #3c763d;
+    font-size: 25px;
+}
+
+.alert-cross {
+    color: #a94442;
+    font-size: 25px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #101010;
+    color: #595959;
+}
+
+.footer-license {
+    padding-top: 20px;
+    float: left;
+}
+
+.footer-social {
+    padding-top: 20px;
+    float: left;
+}
