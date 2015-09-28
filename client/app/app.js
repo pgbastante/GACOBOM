@@ -1,10 +1,13 @@
+/*global angular */
+
 (function () {
     'use strict';
 
     // Declare app level module which depends on views, and components
     angular.module('gacobom', [
         'ngRoute',
-        'ui.bootstrap']).
+        'ui.bootstrap',
+        'ngSanitize']).
         config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
             // $locationProvider.html5Mode(true);
             $routeProvider
@@ -14,13 +17,11 @@
                     controllerAs: 'games'
                 })
                 .when('/games/:id', {
-                    templateUrl: 'views/games/show.html',
-                    controller: 'GameCtrl',
-                    controllerAs: 'game'
+                    templateUrl: 'views/games/show.html'
                 })
                 .when('/comics', {templateUrl: 'views/comics/index.html'})
                 .when('/books', {templateUrl: 'views/books/index.html'})
                 .when('/', {templateUrl: 'views/main/index.html'})
                 .otherwise({redirectTo: '/l'});
         }]);
-})();
+}());
