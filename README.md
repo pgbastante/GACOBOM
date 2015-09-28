@@ -29,3 +29,15 @@ v.0.0.3
 * Added some angular logic, created controllers and factories for common functions and games
 * Added more static filetypes in nginx.conf
 * Added Angular-bootstrap for some bootstrap based angular components
+
+v.0.0.4
+
+* Refactor some css clases to match a lowercase dash-delimited notation.
+* Added a template for games. Needs some work on the media elements and the covers for the games.
+* Added ngSanitize to sanitize HTML strings
+* Simplified the footer 
+* Updated Angular to 1.4.6
+* Added NgResource (not used yet)
+* Added some dummy files in the server to test. Will be deleted once de server is running
+* Added some new routes in the server to support games and media
+

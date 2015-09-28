@@ -1,16 +1,3 @@
-.game_list {
-    padding: 80px 15px;
-}
-
-.game_main_form {
-    padding: 30px 15px;
-}
-
-.game_thumbnail {
-    width: 165px;
-    height: auto;
-}
-
 .cover_thumbnail {
     width: 107px;
     height: auto;
@@ -23,16 +10,6 @@
 
 .tablist {
     padding-top: 20px;
-}
-
-.ok-check {
-    color: #3c763d;
-    font-size: 25px;
-}
-
-.alert-cross {
-    color: #a94442;
-    font-size: 25px;
 }
 
 html {
@@ -48,7 +25,8 @@ body {
 .footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #101010;
@@ -58,9 +36,11 @@ body {
 .footer-license {
     padding-top: 20px;
     float: left;
+    padding-left: 20px;
 }
 
 .footer-social {
     padding-top: 20px;
-    float: left;
+    float: right;
+    padding-right: 20px;
 }

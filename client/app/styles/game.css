@@ -1,26 +1,73 @@
 .metacritic {
-    color: #FFFFFF;
     font-size: 15px;
-    border-style: solid;
     font-weight: bold;
-    vertical-align: middle;
-    padding: 9px;
-
 }
 
-.metacritic-positive {
-    background-color: #66cc33;
+.positive {
+    color: #66cc33;
 }
 
-.metacritic-neutral {
-    background-color: #ffcc33;
+.neutral {
+    color: #ffcc33;
 }
 
-.metacritic-negative {
-    background-color: #ff0000;
+.negative {
+    color: #ff0000;
 }
 
 .rating {
     text-align: center;
     padding-top: 10px;
+}
+
+.left-menu-label {
+    text-align: right;
+}
+
+.details-menu {
+    padding-top: 20px;
+}
+
+.cover {
+    text-align: center;
+}
+
+.panel-heading {
+    background-color: #337ab7 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+.game-list {
+    padding: 80px 15px;
+}
+
+.game-main-form {
+    padding: 30px 15px;
+}
+
+.game-thumbnail {
+    min-width: 120px;
+    width: 100%;
+    height: auto;
+}
+
+.media-container, .artwork-container {
+    -moz-column-count: 3;
+    -moz-column-width: 120px;
+    -webkit-column-count: 3;
+    -webkit-column-width: 120px;
+    column-count: 3;
+    column-width: 120px;
+}
+
+.media-element, .artwork-element {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: inline-flex;
+}
+
+.text-field {
+    text-align: justify;
 }

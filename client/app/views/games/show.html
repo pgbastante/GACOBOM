@@ -1,0 +1,260 @@
+<div class = "game-main-form" ng-controller = "GameCtrl as game">
+    <div class = "page-header">
+        <h1>{{game.data.title}}
+            <small>{{game.data.subtitle}}</small>
+        </h1>
+    </div>
+    <div class = "row">
+        <div class = "col-xs-12 col-sm-4 well">
+            <div class = "cover">
+                <img ng-src = "/games/{{game.data.id}}/cover" class = "img-responsive img-thumbnail" alt = "">
+            </div>
+            <div class = "rating">
+                <rating ng-model = "game.data.score" max = "10"></rating>
+            </div>
+
+            <div class = "row details-menu panel panel-default">
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Publisher</label>
+                </div>
+                <div class = "col-xs-8">
+                    <div>
+                        <p ng-repeat = "publisher in game.data.publishers">
+                            {{publisher.name}}</p>
+                    </div>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Developer</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p ng-repeat = "developer in game.data.developers">
+                        {{developer.name}}</p>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Released</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p>{{game.data.released}}</p>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Genre</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p>{{game.data.genre.name}}</p>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Series</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p>{{game.data.series.name}}</p>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Manual</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p><span class = "glyphicon"
+                             ng-class = "{'positive glyphicon-ok': game.data.manual,'negative glyphicon-remove': !game.data.manual}"></span>
+                    </p>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>MetaScore</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p class = "metacritic"
+                       ng-class = "{'negative': (game.data.metascore >= 0 && game.data.metascore <= 49),'neutral': (game.data.metascore >= 50 && game.data.metascore <= 74),'positive': (game.data.metascore >= 75 && game.data.metascore <= 100)}">
+                        {{game.data.metascore}}</p>
+                </div>
+                <div class = "clearfix"></div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Rating</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p>{{game.data.rating.name}}</p>
+                </div>
+            </div>
+            <div class = "row panel panel-default">
+                <div class = "panel-heading">
+                    <h3 class = "panel-title">User data</h3>
+                </div>
+                <div class = "col-xs-4 left-menu-label">
+                    <label>Played</label>
+                </div>
+                <div class = "col-xs-8">
+                    <p><span class = "glyphicon"
+                             ng-class = "{'positive glyphicon-ok': game.data.played,'negative glyphicon-remove': !game.data.played}"></span>
+                    </p>
+                </div>
+                <div class = "clearfix"></div>
+            </div>
+            <div class = "row panel panel-default">
+                <div class = "panel-heading">
+                    <h3 class = "panel-title">Credits</h3>
+                </div>
+                <div ng-repeat = "role in game.data.credits">
+                    <div class = "col-xs-4 left-menu-label">
+                        <label>{{role.name}}</label>
+                    </div>
+                    <div class = "col-xs-8">
+                        <p ng-repeat = "person in role.people">{{person.name}}</p>
+                    </div>
+                    <div class = "clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "col-xs-12 col-sm-7 well col-sm-offset-1">
+            <div class = "row tab_container">
+                <div>
+                    <h3>Description</h3>
+
+                    <div class = "text-field" ng-bind-html = "game.data.description"></div>
+                </div>
+                <div ng-show = "game.data.howto">
+                    <h3>How to run</h3>
+
+                    <div class = "text-field" ng-bind-html = "game.data.howto"></div>
+                </div>
+                <div ng-show = "game.data.notes">
+                    <h3>Notes</h3>
+
+                    <div class = "text-field" ng-bind-html = "game.data.notes"></div>
+                </div>
+            </div>
+            <tabset class = "tablist" type = "pills">
+                <tab heading = "Media">
+                    <div class = "media-container">
+                        <div ng-repeat = "media in game.data.media" class = "media-element">
+                            <a class = "thumbnail game-thumbnail">
+                                <img ng-src = "/games/{{game.data.id}}/media/{{media.id}}">
+
+                                <div class = "caption">
+                                    <p ng-bind-html = "media.text"></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading = "Covers">
+
+
+                </tab>
+                <tab heading = "Artwork">
+                    <div class = "row">
+                        <div class = "artwork-container">
+                            <div class = "artwork-element" ng-repeat = "art in game.data.artwork">
+                                <a class = "thumbnail game-thumbnail">
+                                    <img ng-src = "/games/{{game.data.id}}/art/{{art.id}}">
+
+                                    <div class = "caption">
+                                        <p>{{art.text}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading = "Game">
+                    <div class = "panel panel-default" ng-repeat = "version in game.data.versions">
+                        <div class = "panel-heading">
+                            <h3 class = "panel-title">{{version.name}}</h3>
+                        </div>
+                        <div class = "panel-body">
+                            <div class = "row">
+                                <div ng-show = "version.platforms">
+                                    <div class = "col-md-2"><label>Platform</label></div>
+                                    <div class = "col-md-10"><p ng-repeat = "platform in version.platforms">
+                                        {{platform.name}}</p></div>
+                                </div>
+                                <div class = "clearfix"></div>
+                                <div class = "col-md-2"><label>Files</label></div>
+                                <div class = "col-md-10"><p ng-repeat = "file in version.files">
+                                    <a ng-href = "#/games/{{game.data.id}}/versions/{{file.id}}">{{file.name}}</a>
+                                    ({{file.ext}},{{file.size}})
+                                </p></div>
+                                <div class = "clearfix"></div>
+                                <div class = "col-md-12" ng-bind-html = "version.notes"></div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading = "Addons">
+                    <div class = "panel panel-default" ng-repeat = "addon in game.data.addons">
+                        <div class = "panel-heading">
+                            <h3 class = "panel-title">{{addon.name}}</h3>
+                        </div>
+                        <div class = "panel-body">
+                            <div class = "row">
+                                <div class = "col-md-2"><label>Last Update</label></div>
+                                <div class = "col-md-10"><p>{{addon.last_update}}</p></div>
+                                <div class = "clearfix"></div>
+                                <div class = "col-md-2"><label>Files</label></div>
+                                <div class = "col-md-10"><p ng-repeat = "file in cheat.files">
+                                    <a ng-href = "#/games/{{game.data.id}}/addons/{{file.id}}">{{file.name}}</a>
+                                    ({{file.ext}},{{file.size}})
+                                </p></div>
+                                <div class = "clearfix"></div>
+                                <div class = "col-md-12" ng-bind-html = "addon.notes"></div>
+                                <div class = "clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading = "Trivia">
+                    <div class = "panel panel-default" ng-repeat = "trivia in game.data.trivia">
+                        <div class = "panel-heading">
+                            <h3 class = "panel-title">{{trivia.title}}</h3>
+                        </div>
+                        <div class = "panel-body" ng-bind-html = "trivia.text"></div>
+                    </div>
+                </tab>
+                <tab heading = "Guides">
+                    <div class = "panel panel-default" ng-repeat = "cheat in game.data.cheats">
+                        <div class = "panel-heading">
+                            <h3 class = "panel-title">{{cheat.name}}</h3>
+                        </div>
+                        <div class = "panel-body">
+                            <div class = "row">
+                                <div class = "col-md-2"><label>Last Update</label></div>
+                                <div class = "col-md-10"><p>{{cheat.last_update}}</p></div>
+                                <div class = "clearfix"></div>
+                                <div class = "col-md-2"><label>Files</label></div>
+                                <div class = "col-md-10"><p ng-repeat = "file in cheat.files">
+                                    <a ng-href = "#/games/{{game.data.id}}/guides/{{file.id}}">{{file.name}}</a>
+                                    ({{file.ext}},{{file.size}})
+                                </p></div>
+                                <div class = "clearfix"></div>
+                                <div class = "col-md-12" ng-bind-html = "cheat.notes"></div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading = "Links">
+                    <table class = "table table-responsive table-condensed">
+                        <tr>
+                            <th>
+                                Web
+                            </th>
+                            <th>
+                                Notes
+                            </th>
+                        </tr>
+                        <tr ng-repeat = "link in game.data.links">
+                            <td>
+                                <a ng-href = "{{link.url}}" target = "_blank">{{link.type}}</a>
+                            </td>
+                            <td>
+                                {{link.notes}}
+                            </td>
+                        </tr>
+                    </table>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>

@@ -22,11 +22,10 @@
 
             function getGame() {
                 gamesFactory.getGame($routeParams.id).success(function (data) {
-                    ctrlr.game = data;
+                    ctrlr.data = data;
                 }).catch(function (data) {
                     ctrlr.errors = data.status;
                 });
-
             }
 
             getGame();

@@ -2,14 +2,13 @@
   "id": 1,
   "title": "DOOM II",
   "subtitle": "Hell on Earth",
-  "cover": "",
-  "description": "<p>In this sequel to the original Doom, you play the same hero - the last remaining space marine. After having single-handedly saved Mars from demonic threat, you return to Earth, only to find out that the demons have already invaded it, killed most of its inhabitants or possessed them. It's your task to bring down the force field around the last operational star port to allow the remnants of mankind to escape to the stars.</p><p>Doom II looks and plays very similarly to its predecessor, utilizing the same 3D graphical engine with 2D sprites for enemies. The game play once again consists entirely of navigating the hero from first-person view through 3D environments and shooting at the demons while attempting to find your way out by flipping switches and looking for keys. Unlike in Doom, which is divided into three episodes, the 30 levels of Doom II (plus the 2 secret levels) form one long episode.</p><p>Doom II adds one new weapon to the players arsenal; the super shotgun, several new demon types with more advanced attacks than those of the first Doom, such as the chaingun-toting Heavy Weapon Dudes, the skeletal Revenants who launch homing missiles and the sinister Arch-Viles who have a highly damaging fire attack.</p>",
+  "description": "<p>In this sequel to the original Doom, you play the same hero - the last remaining space marine. After having single-handedly saved Mars from demonic threat, you return to Earth, only to find out that the demons have already invaded it, killed most of its inhabitants or possessed them. It's your task to bring down the force field around the last operational star port to allow the remnants of mankind to escape to the stars.</p><p>Doom II looks and plays very similarly to its predecessor, utilizing the same 3D graphical engine with 2D sprites for enemies. The game play once again consists entirely of navigating the hero from first-person view through 3D environments and shooting at the demons while attempting to find your way out by flipping switches and looking for keys. Unlike in Doom, which is divided into three episodes, the 30 levels of Doom II (plus the 2 secret levels) form one long episode.</p><p>Doom II adds one new weapon to the players arsenal; the super shotgun, several new demon types with more advanced attacks than those of the first Doom, such as the chaingun-toting Heavy Weapon Dudes, the skeletal Revenants who launch homing missiles and the sinister Arch-Viles who have a highly damaging fire attack</p>",
   "series": {
     "id": 1,
     "name": "Doom",
     "order": 2
   },
-  "manual": "",
+  "manual": true,
   "publishers": [
     {
       "id": 1,
@@ -52,8 +51,8 @@
     "id": 1,
     "name": "Direct Control"
   },
-  "metascore": 85,
-  "score": 10,
+  "metascore": 74,
+  "score": 7,
   "trivia": [
     {
       "id": 1,
@@ -71,102 +70,178 @@
       "text": "<p>If you play the boss' sound file backwards, it says 'To win the game, you must beat me, John Romero.' John Romero is one of the developers.</p>"
     }
   ],
-  "Media": [
+  "media": [
     {
       "id": 1,
-      "file": "",
       "text": "",
       "type": "video"
     },
     {
       "id": 2,
-      "file": "",
-      "text": "",
+      "text": "this is some text",
       "type": "image"
     },
     {
       "id": 3,
-      "file": "",
       "text": "",
       "type": "video"
     },
     {
       "id": 4,
-      "file": "",
-      "text": ""
+      "text": "and more text",
+      "type": "video"
     },
     {
       "id": 5,
-      "file": "",
-      "text": ""
+      "text": "",
+      "type": "video"
     },
     {
       "id": 6,
-      "file": "",
-      "text": ""
+      "text": "",
+      "type": "video"
+    },
+    {
+      "id": 6,
+      "text": "",
+      "type": "video"
     }
   ],
   "artwork": [
     {
       "id": 1,
-      "file": "",
       "text": ""
     },
     {
       "id": 2,
-      "file": "",
       "text": ""
     },
     {
       "id": 3,
-      "file": "",
       "text": ""
     },
     {
       "id": 4,
-      "file": "",
       "text": ""
     },
     {
       "id": 5,
-      "file": "",
       "text": ""
     },
     {
       "id": 6,
-      "file": "",
       "text": ""
     }
   ],
   "links": [
     {
-      "mobygames": "http://www.mobygames.com/game/doom-ii_",
-      "gamefaqs": "http://www.gamefaqs.com/pc/197142-doom-ii",
-      "steam": "http://store.steampowered.com/app/2300/"
+      "id": 1,
+      "type": "mobygames",
+      "url": "http://www.mobygames.com/game/doom-ii_"
+    },
+    {
+      "id": 2,
+      "type": "gamefaqs",
+      "url": "http://www.gamefaqs.com/pc/197142-doom-ii"
+    },
+    {
+      "id": 3,
+      "type": "steam",
+      "url": "http://store.steampowered.com/app/2300/"
     }
   ],
   "credits": [
     {
       "id": 1,
-      "name": "John Romero",
-      "roles": [
+      "name": "Programmer",
+      "people": [
         {
           "id": 1,
-          "name": "Level Designer"
+          "name": "John Romero"
         },
         {
           "id": 2,
-          "name": "Programmer"
+          "name": "John Carmack"
         }
       ]
     },
     {
       "id": 2,
-      "name": "John Carmack",
-      "roles": [
+      "name": "Level Designer",
+      "people": [
+        {
+          "id": 1,
+          "name": "John Romero"
+        }
+      ]
+    }
+  ],
+  "cheats": [
+    {
+      "id": 1,
+      "name": "Walkthrough",
+      "last_update": "25/10/2014",
+      "type": "Guide",
+      "files": [
+        {
+          "id": 1,
+          "name": "w1",
+          "ext": "txt",
+          "size": "66K"
+        },
         {
           "id": 2,
-          "name": "Programmer"
+          "name": "w2",
+          "ext": "txt",
+          "size": "1K"
+        },
+        {
+          "id": 3,
+          "name": "w3",
+          "ext": "jpg",
+          "size": "10MB"
+        }
+      ],
+      "notes": "<p>Game Walkthrough</p>"
+    },
+    {
+      "id": 2,
+      "name": "Cheats",
+      "last_update": "25/10/2014",
+      "type": "Guide",
+      "notes": "<p><ul><li>idkfa</li><li>iddqd</li></ul></p>"
+    }
+  ],
+  "versions": [
+    {
+      "id": 1,
+      "name": "Game files",
+      "type": "game",
+      "files": [
+        {
+          "id": 1,
+          "name": "doom2",
+          "ext": "zip",
+          "size": "30MB"
+        }
+      ],
+      "platforms": [
+        {
+          "id": 1,
+          "name": "MsDos"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Manual",
+      "type": "manual",
+      "files": [
+        {
+          "id": 1,
+          "name": "manual",
+          "ext": "pdf",
+          "size": "1MB"
         }
       ]
     }

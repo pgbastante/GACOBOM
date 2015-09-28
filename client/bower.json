@@ -2,11 +2,11 @@
   "name": "gacobom-client",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "~1.4.0",
+    "angular": "~1.4.6",
     "angular-bootstrap": "~0.13.4",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
-    "angular-route": "~1.4.0",
+    "angular-resource": "~1.4.6",
+    "angular-route": "~1.4.6",
+    "angular-sanitize": "~1.4.6",
     "bootstrap": "~3.3.5",
     "html5shiv": "~3.7.3",
     "respond": "~1.4.2"

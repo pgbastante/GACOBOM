@@ -9,24 +9,27 @@ var router = express.Router();
 
 router.get('/games', function (req, res, next) {
     var filePath = path.join(__dirname, '../dummy/games.json');
-    var stat = fileSystem.statSync(filePath);
-    res.writeHead(200, {
-        'content-type': 'application/json',
-        'content-length': stat.size
-    });
-    var readStream = fileSystem.createReadStream(filePath);
-    readStream.pipe(res);
+    res.sendFile(filePath);
 });
 
 router.get('/games/:id', function (req, res) {
     var filePath = path.join(__dirname, '../dummy/game.json');
-    var stat = fileSystem.statSync(filePath);
-    res.writeHead(200, {
-        'content-type': 'application/json',
-        'content-length': stat.size
-    });
-    var readStream = fileSystem.createReadStream(filePath);
-    readStream.pipe(res);
+    res.sendFile(filePath);
+});
+
+router.get('/games/:id/cover', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/doom_2.jpg');
+    res.sendFile(filePath);
+});
+
+router.get('/games/:id/media/:mediaId', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/test_thumbnail.gif');
+    res.sendFile(filePath);
+});
+
+router.get('/games/:id/art/:artId', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/artwork_example.jpg');
+    res.sendFile(filePath);
 });
 
 router.get('/count', function (req, res, next) {
