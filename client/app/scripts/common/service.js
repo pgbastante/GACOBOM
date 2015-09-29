@@ -7,7 +7,7 @@
         var commonFactory = {};
 
         commonFactory.getMediaCount = function () {
-            return $http.get('/count');
+            return $http.get('http://app.gacobom.com/count');
         };
 
         return commonFactory;

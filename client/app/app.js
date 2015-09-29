@@ -9,7 +9,7 @@
         'ui.bootstrap',
         'ngSanitize']).
         config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-            // $locationProvider.html5Mode(true);
+            $locationProvider.html5Mode(true);
             $routeProvider
                 .when('/games', {
                     templateUrl: 'views/games/index.html',

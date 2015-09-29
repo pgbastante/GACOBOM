@@ -7,11 +7,11 @@
         var gamesFactory = {};
 
         gamesFactory.getGames = function () {
-            return $http.get('/games');
+            return $http.get('http://app.gacobom.com/games');
         };
 
         gamesFactory.getGame = function (id) {
-            return $http.get('/games/' + id);
+            return $http.get('http://app.gacobom.com/games/' + id);
         };
 
         return gamesFactory;

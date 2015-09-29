@@ -108,6 +108,17 @@ if [[ $ping_result == *bytes?from* ]]; then
     cp /srv/config/nginx.conf /etc/nginx/nginx.conf
     rm -rf /etc/nginx/sites-available/default
 
+    sudo mkdir /etc/nginx/sites-available > /dev/null
+    sudo mkdir /etc/nginx/sites-enabled > /dev/null
+
+    cp /srv/config/nginx_default.conf /etc/nginx/sites-available/default > /dev/null
+    cp /srv/config/nginx_node.conf /etc/nginx/sites-available/app.gacobom.com > /dev/null
+
+    # Create symlinks with the avaliable sites to the enabled sites
+
+    sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+    sudo ln -s /etc/nginx/sites-available/app.gacobom.com /etc/nginx/sites-enabled/app.gacobom.comm
+
     # Make a symbolic with between our shared client folder and the nginx server folder
     sudo rm -r /usr/share/nginx/html
     sudo ln -s /var/www/html/ /usr/share/nginx/
