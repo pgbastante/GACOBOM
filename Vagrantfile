@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # installed, the following will automatically configure your local machine's hosts file to
   # be aware of the domains specified below.
   if defined?(VagrantPlugins::HostsUpdater)
-    config.hostsupdater.aliases = ['gacobom.com','www.gacobom.com']
+    config.hostsupdater.aliases = ['gacobom.com','www.gacobom.com', 'app.gacobom.com']
     config.hostsupdater.remove_on_suspend = true
   end
 

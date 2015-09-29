@@ -7,7 +7,9 @@
     <div class = "row">
         <div class = "col-xs-12 col-sm-4 well">
             <div class = "cover">
-                <img ng-src = "/games/{{game.data.id}}/cover" class = "img-responsive img-thumbnail" alt = "">
+                <img ng-src = "http://app.gacobom.com/games/{{game.data.id}}/cover"
+                     class = "img-responsive img-thumbnail"
+                     alt = "">
             </div>
             <div class = "rating">
                 <rating ng-model = "game.data.score" max = "10"></rating>
@@ -131,7 +133,7 @@
                     <div class = "media-container">
                         <div ng-repeat = "media in game.data.media" class = "media-element">
                             <a class = "thumbnail game-thumbnail">
-                                <img ng-src = "/games/{{game.data.id}}/media/{{media.id}}">
+                                <img ng-src = "http://app.gacobom.com/games/{{game.data.id}}/media/{{media.id}}">
 
                                 <div class = "caption">
                                     <p ng-bind-html = "media.text"></p>
@@ -149,7 +151,7 @@
                         <div class = "artwork-container">
                             <div class = "artwork-element" ng-repeat = "art in game.data.artwork">
                                 <a class = "thumbnail game-thumbnail">
-                                    <img ng-src = "/games/{{game.data.id}}/art/{{art.id}}">
+                                    <img ng-src = "http://app.gacobom.com/games/{{game.data.id}}/art/{{art.id}}">
 
                                     <div class = "caption">
                                         <p>{{art.text}}</p>
@@ -174,7 +176,7 @@
                                 <div class = "clearfix"></div>
                                 <div class = "col-md-2"><label>Files</label></div>
                                 <div class = "col-md-10"><p ng-repeat = "file in version.files">
-                                    <a ng-href = "#/games/{{game.data.id}}/versions/{{file.id}}">{{file.name}}</a>
+                                    <a ng-href = "http://app.gacobom.com/games/{{game.data.id}}/versions/{{file.id}}">{{file.name}}</a>
                                     ({{file.ext}},{{file.size}})
                                 </p></div>
                                 <div class = "clearfix"></div>
@@ -195,7 +197,7 @@
                                 <div class = "clearfix"></div>
                                 <div class = "col-md-2"><label>Files</label></div>
                                 <div class = "col-md-10"><p ng-repeat = "file in cheat.files">
-                                    <a ng-href = "#/games/{{game.data.id}}/addons/{{file.id}}">{{file.name}}</a>
+                                    <a ng-href = "http://app.gacobom.com/games/{{game.data.id}}/addons/{{file.id}}">{{file.name}}</a>
                                     ({{file.ext}},{{file.size}})
                                 </p></div>
                                 <div class = "clearfix"></div>
@@ -225,7 +227,7 @@
                                 <div class = "clearfix"></div>
                                 <div class = "col-md-2"><label>Files</label></div>
                                 <div class = "col-md-10"><p ng-repeat = "file in cheat.files">
-                                    <a ng-href = "#/games/{{game.data.id}}/guides/{{file.id}}">{{file.name}}</a>
+                                    <a ng-href = "http://app.gacobom.com/games/{{game.data.id}}/guides/{{file.id}}">{{file.name}}</a>
                                     ({{file.ext}},{{file.size}})
                                 </p></div>
                                 <div class = "clearfix"></div>
