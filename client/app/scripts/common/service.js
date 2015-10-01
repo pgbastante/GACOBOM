@@ -3,14 +3,12 @@
 (function () {
     "use strict";
 
-    angular.module('gacobom').factory('commonFactory', ['$http', function ($http) {
-        var commonFactory = {};
-
-        commonFactory.getMediaCount = function () {
-            return $http.get('http://app.gacobom.com/count');
+    angular.module('gacobom').factory('commonFactory', ['$http', 'API_SETTINGS', function ($http, API_SETTINGS) {
+        return {
+            getMediaCount: function () {
+                return $http.get(API_SETTINGS.API_URL + '/count');
+            }
         };
-
-        return commonFactory;
     }]);
 
 

@@ -1,0 +1,12 @@
+<div class = "panel-heading">
+    <h3 class = "panel-title">Credits</h3>
+</div>
+<div ng-repeat = "role in credits">
+    <div class = "col-xs-4 left-menu-label">
+        <label>{{role.name}}</label>
+    </div>
+    <div class = "col-xs-8">
+        <p ng-repeat = "person in role.people">{{person.name}}</p>
+    </div>
+    <div class = "clearfix"></div>
+</div>

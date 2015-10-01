@@ -3,19 +3,14 @@
 (function () {
     "use strict";
 
-    angular.module('gacobom').factory('gamesFactory', ['$http', function ($http) {
-        var gamesFactory = {};
-
-        gamesFactory.getGames = function () {
-            return $http.get('http://app.gacobom.com/games');
+    angular.module('gacobom').factory('gamesFactory', ['$http', 'API_SETTINGS', function ($http, API_SETTINGS) {
+        return {
+            getGames: function () {
+                return $http.get(API_SETTINGS.API_URL + '/games');
+            },
+            getGame: function (id) {
+                return $http.get(API_SETTINGS.API_URL + '/games/' + id);
+            }
         };
-
-        gamesFactory.getGame = function (id) {
-            return $http.get('http://app.gacobom.com/games/' + id);
-        };
-
-        return gamesFactory;
     }]);
-
-
 }());

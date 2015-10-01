@@ -32,6 +32,11 @@ router.get('/games/:id/art/:artId', function (req, res) {
     res.sendFile(filePath);
 });
 
+router.get('/games/:id/file/:artId', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/walkthrough.txt');
+    res.download(filePath);
+});
+
 router.get('/count', function (req, res, next) {
     res.status(200).json({"games": 100, "books": 200, "comics": 10000});
 });

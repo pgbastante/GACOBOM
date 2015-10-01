@@ -56,81 +56,100 @@
   "trivia": [
     {
       "id": 1,
-      "title": "1001 Video Games",
-      "text": "<p>Doom II: Hell on Earth appears in the book 1001 Video Games You Must Play Before You Die by General Editor Tony Mott.</p>"
+      "name": "1001 Video Games",
+      "notes": "<p>Doom II: Hell on Earth appears in the book 1001 Video Games You Must Play Before You Die by General Editor Tony Mott.</p>"
     },
     {
       "id": 2,
-      "title": "Arcade Version",
-      "text": "<p>In the 1997 film Grosse Point Blank a store clerk can be seen playing on a DOOM II arcade cabinet. An arcade version was however never released and the game seen in the film is a film prop with a PC inside.</p>"
+      "name": "Arcade Version",
+      "notes": "<p>In the 1997 film Grosse Point Blank a store clerk can be seen playing on a DOOM II arcade cabinet. An arcade version was however never released and the game seen in the film is a film prop with a PC inside.</p>"
     },
     {
       "id": 3,
-      "title": "Boss' Sound File",
-      "text": "<p>If you play the boss' sound file backwards, it says 'To win the game, you must beat me, John Romero.' John Romero is one of the developers.</p>"
+      "name": "Boss' Sound File",
+      "notes": "<p>If you play the boss' sound file backwards, it says 'To win the game, you must beat me, John Romero.' John Romero is one of the developers.</p>"
     }
   ],
   "media": [
     {
       "id": 1,
       "text": "",
-      "type": "video"
+      "type": "video",
+      "url": "/games/1/media/1"
     },
     {
       "id": 2,
       "text": "this is some text",
-      "type": "image"
+      "type": "image",
+      "url": "/games/1/media/2"
     },
     {
       "id": 3,
       "text": "",
-      "type": "video"
+      "type": "video",
+      "url": "/games/1/media/3"
     },
     {
       "id": 4,
       "text": "and more text",
-      "type": "video"
+      "type": "video",
+      "url": "/games/1/media/4"
     },
     {
       "id": 5,
       "text": "",
-      "type": "video"
+      "type": "video",
+      "url": "/games/1/media/5"
     },
     {
       "id": 6,
       "text": "",
-      "type": "video"
+      "type": "video",
+      "url": "/games/1/media/6"
     },
     {
       "id": 6,
       "text": "",
-      "type": "video"
+      "type": "video",
+      "url": "/games/1/media/7"
     }
   ],
   "artwork": [
     {
       "id": 1,
-      "text": ""
+      "text": "",
+      "type": "image",
+      "url": "/games/1/art/1"
     },
     {
       "id": 2,
-      "text": ""
+      "text": "",
+      "type": "image",
+      "url": "/games/1/art/2"
     },
     {
       "id": 3,
-      "text": ""
+      "text": "",
+      "type": "image",
+      "url": "/games/1/art/3"
     },
     {
       "id": 4,
-      "text": ""
+      "text": "",
+      "type": "image",
+      "url": "/games/1/art/4"
     },
     {
       "id": 5,
-      "text": ""
+      "text": "",
+      "type": "image",
+      "url": "/games/1/art/5"
     },
     {
       "id": 6,
-      "text": ""
+      "text": "",
+      "type": "image",
+      "url": "/games/1/art/6"
     }
   ],
   "links": [
@@ -187,19 +206,22 @@
           "id": 1,
           "name": "w1",
           "ext": "txt",
-          "size": "66K"
+          "size": "66K",
+          "url": "/games/1/file/1"
         },
         {
           "id": 2,
           "name": "w2",
           "ext": "txt",
-          "size": "1K"
+          "size": "1K",
+          "url": "/games/1/file/2"
         },
         {
           "id": 3,
           "name": "w3",
           "ext": "jpg",
-          "size": "10MB"
+          "size": "10MB",
+          "url": "/games/1/file/3"
         }
       ],
       "notes": "<p>Game Walkthrough</p>"
@@ -219,10 +241,11 @@
       "type": "game",
       "files": [
         {
-          "id": 1,
+          "id": 4,
           "name": "doom2",
           "ext": "zip",
-          "size": "30MB"
+          "size": "30MB",
+          "url": "/games/1/file/4"
         }
       ],
       "platforms": [
@@ -241,7 +264,8 @@
           "id": 1,
           "name": "manual",
           "ext": "pdf",
-          "size": "1MB"
+          "size": "1MB",
+          "url": "/games/1/file/5"
         }
       ]
     }

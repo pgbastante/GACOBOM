@@ -1,0 +1,18 @@
+<table class = "table table-responsive table-condensed">
+    <tr>
+        <th>
+            Web
+        </th>
+        <th>
+            Notes
+        </th>
+    </tr>
+    <tr ng-repeat = "link in links">
+        <td>
+            <a ng-href = "{{link.url}}" target = "_blank">{{link.type}}</a>
+        </td>
+        <td>
+            {{link.notes}}
+        </td>
+    </tr>
+</table>
