@@ -7,7 +7,13 @@
             var ctrlr = this;
 
             function listGames() {
-                ctrlr.list = gamesFactory.query();
+                ctrlr.list = gamesFactory.query(function (data) {
+                    ctrlr.gameCount = data.length;
+                });
+                ctrlr.limitCount = 50;
+                ctrlr.pageIndex = 1;
+                ctrlr.numPages = 5;
+
             }
 
             listGames();
