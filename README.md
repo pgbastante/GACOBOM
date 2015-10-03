@@ -41,3 +41,33 @@ v.0.0.4
 * Added some dummy files in the server to test. Will be deleted once de server is running
 * Added some new routes in the server to support games and media
 
+v.0.0.5
+
+* Made some refactor to avoid the use of the # in the urls with html5mode
+* Changed the server config and split it into several files
+* Changed the provision script so the new config files are located were they belong
+* Now we have 2 nginx servers configured one for the static files and one for node
+* The one with the static files also redirects any request to index.html
+* The node server exposes the api on app.gacobom.com
+
+v.0.0.6
+
+* Added constant for the api URL
+* Added 8 directives make the code of the game template more readable and reusable
+* Refactored the existing services to make them more readable
+* Added a txt file for the dummy files in the server
+* The structure of the game has been modified to reuse some components and to have the resources expose their urls
+* New route on the server to download the demo files.
+
+v.0.0.7
+
+* Refactor tu use ngResource on games.
+* Removed the error bit of the calls because its not implemented yet, it will be done later in a different way
+
+v.0.0.8
+
+* Added pagination to the games list
+
+v.0.0.9
+
+* Refactor of the game list to reuse with other media types
