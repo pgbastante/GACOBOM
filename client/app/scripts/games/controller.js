@@ -7,11 +7,7 @@
             var ctrlr = this;
 
             function listGames() {
-                gamesFactory.getGames().success(function (g) {
-                    ctrlr.list = g;
-                }).error(function (e) {
-                    ctrlr.status = 'Unable to list games: ' + e.message;
-                });
+                ctrlr.list = gamesFactory.query();
             }
 
             listGames();
@@ -21,11 +17,7 @@
             var ctrlr = this;
 
             function getGame() {
-                gamesFactory.getGame($routeParams.id).success(function (data) {
-                    ctrlr.data = data;
-                }).catch(function (data) {
-                    ctrlr.errors = data.status;
-                });
+                ctrlr.data = gamesFactory.get({id: $routeParams.id});
             }
 
             getGame();

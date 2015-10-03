@@ -7,7 +7,8 @@
     angular.module('gacobom', [
         'ngRoute',
         'ui.bootstrap',
-        'ngSanitize'])
+        'ngSanitize',
+        'ngResource'])
         .constant("API_SETTINGS", {
             "API_URL": "http://app.gacobom.com"
         })
