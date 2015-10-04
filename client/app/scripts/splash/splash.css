@@ -1,0 +1,30 @@
+/* Slideshow style */
+.splash {
+    position: fixed;
+    background: rgba(0,0,0,0.85);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1500;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: block;
+    opacity: 1;
+}
+
+.splash .splash-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.splash-content h1 {
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.splash-content img{
+    margin-bottom: 40px;
+}

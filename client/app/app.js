@@ -8,7 +8,8 @@
         'ngRoute',
         'ui.bootstrap',
         'ngSanitize',
-        'ngResource'])
+        'ngResource',
+        'ui.splash'])
         .constant("API_SETTINGS", {
             "API_URL": "http://app.gacobom.com"
         })

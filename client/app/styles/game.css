@@ -46,6 +46,7 @@
     min-width: 120px;
     width: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 .media-container, .artwork-container {
@@ -66,4 +67,8 @@
 
 .text-field {
     text-align: justify;
+}
+
+.gcb-img-modal{
+    margin: auto;
 }
