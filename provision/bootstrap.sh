@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+log_location='/tmp/provision.log'
 
-echo "Start provisioning..."
+echo "Start provisioning..." | tee -a ${log_location}
 
 start_seconds="$(date +%s)"
 
 if [[ ! -d /var/www/html ]]; then
-	mkdir /var/www/html
+    mkdir /var/www/html
 fi
 
 # Capture a basic ping result to Google's primary DNS server to determine if
@@ -15,7 +16,7 @@ fi
 # bunch of errors.
 ping_result="$(ping -c 2 8.8.4.4 2>&1)"
 if [[ $ping_result != *bytes?from* ]]; then
-	ping_result="$(ping -c 2 4.2.2.2 2>&1)"
+    ping_result="$(ping -c 2 4.2.2.2 2>&1)"
 fi
 
 # PACKAGE INSTALLATION
@@ -32,91 +33,89 @@ apt_package_install_list=()
 # status before adding them to the apt_package_install_list array.
 apt_package_check_list=(
 
+    nodejs
+    nginx
     git
-	nodejs
-	curl
-
-	unzip
+    curl
+    unzip
 
 )
 
-echo "Check for apt packages to install..."
+echo "Check for apt packages to install..." | tee -a ${log_location}
 
 # Loop through each of our packages that should be installed on the system. If
 # not yet installed, it should be added to the array of packages to install.
 for pkg in "${apt_package_check_list[@]}"; do
-	package_version="$(dpkg -s $pkg 2>&1 | grep 'Version:' | cut -d " " -f 2)"
-	if [[ -n "${package_version}" ]]; then
-		space_count="$(expr 20 - "${#pkg}")" #11
-		pack_space_count="$(expr 30 - "${#package_version}")"
-		real_space="$(expr ${space_count} + ${pack_space_count} + ${#package_version})"
-		printf " * $pkg %${real_space}.${#package_version}s ${package_version}\n"
-	else
-		echo " *" $pkg [not installed]
-		apt_package_install_list+=($pkg)
-	fi
+    package_version="$(dpkg -s $pkg 2>&1 | grep 'Version:' | cut -d " " -f 2)"
+    if [[ -n "${package_version}" ]]; then
+        space_count="$(expr 20 - "${#pkg}")" #11
+        pack_space_count="$(expr 30 - "${#package_version}")"
+        real_space="$(expr ${space_count} + ${pack_space_count} + ${#package_version})"
+        printf " * $pkg %${real_space}.${#package_version}s ${package_version}\n" | tee -a ${log_location}
+    else
+        echo " *" $pkg [not installed] | tee -a ${log_location}
+        apt_package_install_list+=($pkg)
+    fi
 done
 
 
 if [[ $ping_result == *bytes?from* ]]; then
 
-    echo "Generating & Configuring locales"
-    sudo locale-gen en_US en_US.UTF-8 es_ES.UTF-8 es_ES > /dev/null
-    sudo dpkg-reconfigure locales > /dev/null
+    echo "Generating & Configuring locales" | tee -a ${log_location}
+    sudo locale-gen en_US en_US.UTF-8 es_ES.UTF-8 es_ES &>> ${log_location}
+    sudo dpkg-reconfigure locales &>> ${log_location}
 
-    echo "Installing Node from deb.nodesource.com"
-    curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash - > /dev/null
+    echo "Add Node from deb.nodesource.com" | tee -a ${log_location}
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo bash &>> ${log_location}
 
-	# If there are any packages to be installed in the apt_package_list array,
-	# then we'll run `apt-get update` and then `apt-get install` to proceed.
-	if [[ ${#apt_package_install_list[@]} = 0 ]]; then
-		echo -e "No apt packages to install.\n"
-	else
-		# Before running `apt-get update`, we should add the public keys for
-		# the packages that we are installing from non standard sources via
-		# our appended apt source.list
+    echo "Add nginx to sources" | tee -a ${log_location}
+    sudo add-apt-repository ppa:nginx/development -y &>> ${log_location}
 
-		# update all of the package references before installing anything
-		echo "Running apt-get update..."
-		apt-get update --assume-yes > /dev/null
+    # If there are any packages to be installed in the apt_package_list array,
+    # then we'll run `apt-get update` and then `apt-get install` to proceed.
+    if [[ ${#apt_package_install_list[@]} = 0 ]]; then
+        echo -e "No apt packages to install" | tee -a ${log_location}
+    else
+        # Before running `apt-get update`, we should add the public keys for
+        # the packages that we are installing from non standard sources via
+        # our appended apt source.list
 
-		# install required packages
-		echo "Installing apt-get packages..."
-		apt-get install --assume-yes ${apt_package_install_list[@]} > /dev/null
+        # update all of the package references before installing anything
+        echo "Running apt-get update..." | tee -a ${log_location}
+        sudo apt-get update --assume-yes &>> ${log_location}
 
-		# Clean up apt caches
-		apt-get clean > /dev/null
-	fi
+        # install required packages
+        echo "Installing apt-get packages..." | tee -a ${log_location}
+        sudo apt-get install --assume-yes ${apt_package_install_list[@]} &>> ${log_location}
 
-	# npm
-	#
-	# Make sure we have the latest npm version and the update checker module
-	echo "Installing NPM global packages"
-	sudo npm install -g npm > /dev/null
-	sudo npm install -g npm-check-updates > /dev/null
+        # Clean up apt caches
+        sudo apt-get clean &>> ${log_location}
+    fi
 
-    echo "Installing bower"
-    sudo npm install bower -g > /dev/null
-    echo "Installing grunt"
-    sudo npm install grunt-cli -g > /dev/null
+    # npm
+    #
+    # Make sure we have the latest npm version and the update checker module
+    echo "Installing NPM global packages" | tee -a ${log_location}
+    sudo npm install -g npm &>> ${log_location}
+    sudo npm install -g npm-check-updates &>> ${log_location}
+
+    echo "Installing bower" | tee -a ${log_location}
+    sudo npm install bower -g &>> ${log_location}
+    echo "Installing grunt" | tee -a ${log_location}
+    sudo npm install grunt-cli -g &>> ${log_location}
 
     # nginx
-    #
-    # build nginx from source
 
+    echo "Nginx configuration" | tee -a ${log_location}
     # Copy nginx configuration from local
-    cp /srv/config/nginx.conf /etc/nginx/nginx.conf
-    rm -rf /etc/nginx/sites-available/default
+    sudo cp /srv/config/nginx.conf /etc/nginx/nginx.conf
+    sudo rm -rf /etc/nginx/sites-available/default
 
-    sudo mkdir /etc/nginx/sites-available > /dev/null
-    sudo mkdir /etc/nginx/sites-enabled > /dev/null
-
-    cp /srv/config/nginx_default.conf /etc/nginx/sites-available/default > /dev/null
-    cp /srv/config/nginx_node.conf /etc/nginx/sites-available/app.gacobom.com > /dev/null
+    sudo cp /srv/config/nginx_default.conf /etc/nginx/sites-available/default &>> ${log_location}
+    sudo cp /srv/config/nginx_node.conf /etc/nginx/sites-available/app.gacobom.com &>> ${log_location}
 
     # Create symlinks with the avaliable sites to the enabled sites
 
-    sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
     sudo ln -s /etc/nginx/sites-available/app.gacobom.com /etc/nginx/sites-enabled/app.gacobom.comm
 
     # Make a symbolic with between our shared client folder and the nginx server folder
@@ -125,33 +124,45 @@ if [[ $ping_result == *bytes?from* ]]; then
 
     # Configuration for nginx SSL
     if [[ ! -e /etc/nginx/server.key ]]; then
-        echo "Generate Nginx server private key..."
+        echo "Generate Nginx server private key..." | tee -a ${log_location}
         vvvgenrsa="$(openssl genrsa -out /etc/nginx/server.key 2048 2>&1)"
-        echo "$vvvgenrsa" > /dev/null
+        echo "$vvvgenrsa" &>> ${log_location}
     fi
     if [[ ! -e /etc/nginx/server.csr ]]; then
-        echo "Generate Certificate Signing Request (CSR)..."
-        openssl req -new -batch -key /etc/nginx/server.key -out /etc/nginx/server.csr > /dev/null
+        echo "Generate Certificate Signing Request (CSR)..." | tee -a ${log_location}
+        openssl req -new -batch -key /etc/nginx/server.key -out /etc/nginx/server.csr &>> ${log_location}
     fi
     if [[ ! -e /etc/nginx/server.crt ]]; then
-        echo "Sign the certificate using the above private key and CSR..."
+        echo "Sign the certificate using the above private key and CSR..." | tee -a ${log_location}
         vvvsigncert="$(openssl x509 -req -days 365 -in /etc/nginx/server.csr -signkey /etc/nginx/server.key -out /etc/nginx/server.crt 2>&1)"
-        echo "$vvvsigncert" > /dev/null
+        echo "$vvvsigncert" &>> ${log_location}
     fi
 
     # Start nginx server
-    # echo "Starting nginx server"
+    echo "Starting nginx server" | tee -a ${log_location}
+    rm /var/www/html/index.nginx-debian.html &>> ${log_location}
+    service nginx status       # to get the current status
+    service nginx stop    # to stop any servers if any
+    service nginx start   # to start the server
 
-    # service nginx status       # to get the current status
-    # sudo service nginx stop    # to stop any servers if any
-    # sudo service nginx start   # to start the server
+    # Install pm2 node process manager
+    sudo npm install pm2 -g &>> ${log_location}
 
-    # node /usr/share/nodejs/app.js
+    echo "Setting up PM2 for Node" | tee -a ${log_location}
+    # pm2 list &>> ${log_location}
+    # sudo pm2 startup -u vagrant &>> ${log_location}
+    # pm2 start /usr/share/nodejs/bin/www &>> ${log_location}
+    # pm2 save &>> ${log_location}
+
+    echo "To run the node server as a deamon use pm2 with the following commands: " | tee -a ${log_location}
+    echo "sudo pm2 startup -u vagrant" | tee -a ${log_location}
+    echo "pm2 start /usr/share/nodejs/bin/www" | tee -a ${log_location}
+    echo "pm2 save" | tee -a ${log_location}
 
 else
-    echo -e "\nNo network connection available, skipping package installation"
+    echo -e "No network connection available, skipping package installation" | tee -a ${log_location}
 fi
 
 end_seconds="$(date +%s)"
-echo "-----------------------------"
-echo "Provisioning complete in '$(expr $end_seconds - $start_seconds)' seconds"
+echo "-----------------------------" | tee -a ${log_location}
+echo "Provisioning complete in '$(expr $end_seconds - $start_seconds)' seconds" | tee -a ${log_location}
