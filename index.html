@@ -26,7 +26,7 @@
 
 <p>This project is just an excuse for me to learn AngularJS, NodeJS and everything else I come across.</p>
 
-<p>v0.0.1 </p>
+<p><strong>v0.0.1</strong></p>
 
 <ul>
 <li>Project Scaffolding. Some basic ideas, but may change later.</li>
@@ -37,7 +37,7 @@
 <li>Added Nginx build script to build it with pagespeed. Not part of the provision script, must be installed after.</li>
 </ul>
 
-<p>v0.0.2</p>
+<p><strong>v0.0.2</strong></p>
 
 <ul>
 <li>Started playing with angular and angular-seed</li>
@@ -51,7 +51,7 @@
 <li>Added a dummy counter for games, books and comics</li>
 </ul>
 
-<p>v.0.0.3</p>
+<p><strong>v.0.0.3</strong></p>
 
 <ul>
 <li>Added some angular logic, created controllers and factories for common functions and games</li>
@@ -59,7 +59,7 @@
 <li>Added Angular-bootstrap for some bootstrap based angular components</li>
 </ul>
 
-<p>v.0.0.4</p>
+<p><strong>v.0.0.4</strong></p>
 
 <ul>
 <li>Refactor some css clases to match a lowercase dash-delimited notation.</li>
@@ -72,7 +72,7 @@
 <li>Added some new routes in the server to support games and media</li>
 </ul>
 
-<p>v.0.0.5</p>
+<p><strong>v.0.0.5</strong></p>
 
 <ul>
 <li>Made some refactor to avoid the use of the # in the urls with html5mode</li>
@@ -83,7 +83,7 @@
 <li>The node server exposes the api on app.gacobom.com</li>
 </ul>
 
-<p>v.0.0.6</p>
+<p><strong>v.0.0.6</strong></p>
 
 <ul>
 <li>Added constant for the api URL</li>
@@ -94,24 +94,45 @@
 <li>New route on the server to download the demo files.</li>
 </ul>
 
-<p>v.0.0.7</p>
+<p><strong>v.0.0.7</strong></p>
 
 <ul>
 <li>Refactor tu use ngResource on games.</li>
 <li>Removed the error bit of the calls because its not implemented yet, it will be done later in a different way</li>
 </ul>
 
-<p>v.0.0.8</p>
+<p><strong>v.0.0.8</strong></p>
 
 <ul>
 <li>Added pagination to the games list</li>
 </ul>
 
-<p>v.0.0.9</p>
+<p><strong>v.0.0.9</strong></p>
 
 <ul>
 <li>Refactor of the game list to reuse with other media types</li>
 </ul>
+
+<p><strong>v.0.0.10</strong></p>
+
+<ul>
+<li>Added reusable splash screen based on <a href="https://github.com/popdevelop/angular-splash-demo">https://github.com/popdevelop/angular-splash-demo</a> (without the animations, maybe I'll add them later)</li>
+<li>Added splash screens for covers and thumbnails</li>
+<li>Removed unused css file</li>
+</ul>
+
+<p><strong>v.0.0.11</strong></p>
+
+<ul>
+<li>Changed the bootstrap script to:
+** Log all actions in /tmp/provision.log
+** Install nginx from development source
+** The script to compile nginx from source and add the pagespeed plugins is still usable if you want but I prefer to use this now because its faster
+** Upgraded nodejs to the latest version 4.x
+** Install pm2 as a process manager</li>
+</ul>
+
+<p>Due to a strange error if I use pm2 in the provision script to set the process of the node server, the server starts but I cant manage it with pm2. If I do it myself in the console everything works fine. So wile I look into this issue I'll leave the instructions of pm2 as a comment in the provision script.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/pgbastante/GACOBOM">Gacobom</a> is maintained by <a href="https://github.com/pgbastante">pgbastante</a>.</span>
