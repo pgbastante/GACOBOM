@@ -81,11 +81,11 @@ This project is just an excuse for me to learn AngularJS, NodeJS and everything 
 **v.0.0.11**
 
 * Changed the bootstrap script to:
-** Log all actions in /tmp/provision.log
-** Install nginx from development source
-** The script to compile nginx from source and add the pagespeed plugins is still usable if you want but I prefer to use this now because its faster
-** Upgraded nodejs to the latest version 4.x
-** Install pm2 as a process manager
+  * Log all actions in /tmp/provision.log
+  * Install nginx from development source
+  * The script to compile nginx from source and add the pagespeed plugins is still usable if you want but I prefer to use this now because its faster
+  * Upgraded nodejs to the latest version 4.x
+  * Install pm2 as a process manager
 
 Due to a strange error if I use pm2 in the provision script to set the process of the node server, the server starts but I cant manage it with pm2. If I do it myself in the console everything works fine. So wile I look into this issue I'll leave the instructions of pm2 as a comment in the provision script.
 
