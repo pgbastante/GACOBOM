@@ -3,7 +3,7 @@ GaCoBoM (name is a work in progress) is a Games Comics Books Manager.
 
 This project is just an excuse for me to learn AngularJS, NodeJS and everything else I come across.
 
-v0.0.1 
+**v0.0.1**
 
 * Project Scaffolding. Some basic ideas, but may change later.
 * Added client folder for the client AngularJS app
@@ -12,7 +12,7 @@ v0.0.1
 * Added Vagrant file configuration
 * Added Nginx build script to build it with pagespeed. Not part of the provision script, must be installed after.
 
-v0.0.2
+**v0.0.2**
 
 * Started playing with angular and angular-seed
 * Changed the default route for de nodejs requests so they can start in / and not in /app
@@ -24,13 +24,13 @@ v0.0.2
 * Added a game cover without cover
 * Added a dummy counter for games, books and comics
 
-v.0.0.3
+**v.0.0.3**
 
 * Added some angular logic, created controllers and factories for common functions and games
 * Added more static filetypes in nginx.conf
 * Added Angular-bootstrap for some bootstrap based angular components
 
-v.0.0.4
+**v.0.0.4**
 
 * Refactor some css clases to match a lowercase dash-delimited notation.
 * Added a template for games. Needs some work on the media elements and the covers for the games.
@@ -41,7 +41,7 @@ v.0.0.4
 * Added some dummy files in the server to test. Will be deleted once de server is running
 * Added some new routes in the server to support games and media
 
-v.0.0.5
+**v.0.0.5**
 
 * Made some refactor to avoid the use of the # in the urls with html5mode
 * Changed the server config and split it into several files
@@ -50,7 +50,7 @@ v.0.0.5
 * The one with the static files also redirects any request to index.html
 * The node server exposes the api on app.gacobom.com
 
-v.0.0.6
+**v.0.0.6**
 
 * Added constant for the api URL
 * Added 8 directives make the code of the game template more readable and reusable
@@ -59,15 +59,33 @@ v.0.0.6
 * The structure of the game has been modified to reuse some components and to have the resources expose their urls
 * New route on the server to download the demo files.
 
-v.0.0.7
+**v.0.0.7**
 
 * Refactor tu use ngResource on games.
 * Removed the error bit of the calls because its not implemented yet, it will be done later in a different way
 
-v.0.0.8
+**v.0.0.8**
 
 * Added pagination to the games list
 
-v.0.0.9
+**v.0.0.9**
 
 * Refactor of the game list to reuse with other media types
+
+**v.0.0.10**
+
+* Added reusable splash screen based on https://github.com/popdevelop/angular-splash-demo (without the animations, maybe I'll add them later)
+* Added splash screens for covers and thumbnails
+* Removed unused css file
+
+**v.0.0.11**
+
+* Changed the bootstrap script to:
+** Log all actions in /tmp/provision.log
+** Install nginx from development source
+** The script to compile nginx from source and add the pagespeed plugins is still usable if you want but I prefer to use this now because its faster
+** Upgraded nodejs to the latest version 4.x
+** Install pm2 as a process manager
+
+Due to a strange error if I use pm2 in the provision script to set the process of the node server, the server starts but I cant manage it with pm2. If I do it myself in the console everything works fine. So wile I look into this issue I'll leave the instructions of pm2 as a comment in the provision script.
+
