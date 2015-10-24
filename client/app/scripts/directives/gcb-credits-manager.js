@@ -3,7 +3,7 @@
 
 (function () {
     "use strict";
-    angular.module('gacobom').directive("gcbCreditsManager", function () {
+    angular.module('gacobom').directive("gcbCreditsManager", [function () {
         return {
             restrict: "E",
             templateUrl: "views/directives/gcb-credits-manager.html",
@@ -24,5 +24,5 @@
                 };
             }
         };
-    });
+    }]);
 }());

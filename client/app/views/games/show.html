@@ -6,7 +6,7 @@
     </div>
     <div class = "row">
         <div class = "col-xs-12 col-sm-4 well">
-            <gcb-cover id = "game.data.id"></gcb-cover>
+            <gcb-cover url = "{{game.url}}"></gcb-cover>
             <div class = "rating">
                 <rating ng-model = "game.data.score" max = "10"></rating>
             </div>
@@ -56,22 +56,22 @@
             </div>
             <tabset class = "tablist" type = "pills">
                 <tab heading = "Media">
-                    <gcb-thumbnails items = "game.data.media"></gcb-thumbnails>
+                    <gcb-media items = "game.data.media"></gcb-media>
                 </tab>
                 <tab heading = "Artwork">
-                    <gcb-thumbnails items = "game.data.artwork"></gcb-thumbnails>
+                    <gcb-media items = "game.data.artwork"></gcb-media>
                 </tab>
                 <tab heading = "Game">
-                    <gcb-extra-content extras = "game.data.versions"></gcb-extra-content>
+                    <gcb-extra-content extras = "game.data.versions" url = "{{game.url}}"></gcb-extra-content>
                 </tab>
                 <tab heading = "Addons">
-                    <gcb-extra-content extras = "game.data.addons"></gcb-extra-content>
+                    <gcb-extra-content extras = "game.data.addons" url = "{{game.url}}"></gcb-extra-content>
                 </tab>
                 <tab heading = "Trivia">
-                    <gcb-extra-content extras = "game.data.trivia"></gcb-extra-content>
+                    <gcb-extra-content extras = "game.data.trivia" url = "{{game.url}}"></gcb-extra-content>
                 </tab>
                 <tab heading = "Guides">
-                    <gcb-extra-content extras = "game.data.cheats"></gcb-extra-content>
+                    <gcb-extra-content extras = "game.data.cheats" url = "{{game.url}}"></gcb-extra-content>
                 </tab>
                 <tab heading = "Links">
                     <gcb-links links = "game.data.links"></gcb-links>

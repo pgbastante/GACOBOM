@@ -242,22 +242,19 @@
           "id": 1,
           "name": "w1",
           "ext": "txt",
-          "size": "66K",
-          "url": "/games/1/file/1"
+          "size": "66K"
         },
         {
           "id": 2,
           "name": "w2",
           "ext": "txt",
-          "size": "1K",
-          "url": "/games/1/file/2"
+          "size": "1K"
         },
         {
           "id": 3,
           "name": "w3",
           "ext": "jpg",
-          "size": "10MB",
-          "url": "/games/1/file/3"
+          "size": "10MB"
         }
       ],
       "notes": "<p>Game Walkthrough</p>",
@@ -283,8 +280,7 @@
           "id": 4,
           "name": "doom2",
           "ext": "zip",
-          "size": "30MB",
-          "url": "/games/1/file/4"
+          "size": "30MB"
         }
       ],
       "platforms": [
@@ -304,8 +300,7 @@
           "id": 1,
           "name": "manual",
           "ext": "pdf",
-          "size": "1MB",
-          "url": "/games/1/file/5"
+          "size": "1MB"
         }
       ],
       "group": "versions"

@@ -5,25 +5,14 @@
     angular.module('gacobom')
         .controller('GamesListCtrl', ['gamesFactory', function (gamesFactory) {
             var ctrlr = this;
-
-            function listGames() {
-                ctrlr.list = gamesFactory.query(function (data) {
-                    ctrlr.mediaCount = data.length;
-                });
-            }
-
-            listGames();
-
+            ctrlr.list = gamesFactory.query(function (data) {
+                ctrlr.mediaCount = data.length;
+            });
         }])
-        .controller('GameCtrl', ['$routeParams', 'gamesFactory', function ($routeParams, gamesFactory) {
+        .controller('GameCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, API_SETTINGS) {
             var ctrlr = this;
-
-            function getGame() {
-                ctrlr.data = gamesFactory.get({id: $routeParams.id});
-            }
-
-
-            getGame();
+            ctrlr.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
+            ctrlr.data = gamesFactory.get({id: $routeParams.id});
         }])
         .controller('GameEditCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, API_SETTINGS) {
             var ctrlr = this;

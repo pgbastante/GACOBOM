@@ -3,12 +3,13 @@
 
 (function () {
     "use strict";
-    angular.module('gacobom').directive("gcbExtraContentManager", function () {
+    angular.module('gacobom').directive("gcbExtraContentManager", [function () {
         return {
             restrict: "E",
             templateUrl: "views/directives/gcb-extra-content-manager.html",
             scope: {
-                extras: "="
+                extras: "=",
+                url: "@"
             },
             controller: function ($scope) {
                 $scope.delete = function (id) {
@@ -31,5 +32,5 @@
                 };
             }
         };
-    });
+    }]);
 }());

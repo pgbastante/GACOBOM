@@ -2,7 +2,7 @@
 
 (function () {
     "use strict";
-    angular.module('gacobom').directive("gcbFormDate", function () {
+    angular.module('gacobom').directive("gcbFormDate", [function () {
         return {
             restrict: "E",
             templateUrl: "views/directives/gcb-form-date.html",
@@ -16,5 +16,5 @@
                 });
             }
         };
-    });
+    }]);
 }());

@@ -2,22 +2,22 @@
 
 (function () {
     "use strict";
-    angular.module('gacobom').directive("gcbCover", ['API_SETTINGS', '$splash', function (API_SETTINGS, $splash) {
+    angular.module('gacobom').directive("gcbCover", ['$splash', function ($splash) {
         return {
             restrict: "E",
             templateUrl: "views/directives/gcb-cover.html",
             scope: {
-                id: "="
+                url: "@"
             },
             controller: function ($scope) {
                 $scope.open = function () {
                     $splash.open({
-                        splashImage: API_SETTINGS.API_URL + '/games/' + $scope.id + '/cover'
+                        splashImage: $scope.url + '/cover'
                     });
                 };
             },
             link: function (scope) {
-                scope.image_url = API_SETTINGS.API_URL + '/games/' + scope.id + '/cover';
+                scope.image_url = scope.url + '/cover';
             }
         };
     }]);

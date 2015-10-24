@@ -21,7 +21,7 @@
                 <div class = "col-md-2"><label>Files</label></div>
                 <div class = "col-md-10">
                     <p ng-repeat = "file in extra.files">
-                        <a ng-href = "{{apiUrl + file.url}}">{{file.name}}</a> ({{file.ext}},{{file.size}})
+                        <a ng-href = "{{url + '/file/' + file.id}}">{{file.name}}</a> ({{file.ext}},{{file.size}})
                     </p></div>
                 <div class = "clearfix"></div>
             </div>

@@ -2,7 +2,7 @@
 /*global $*/
 (function () {
     "use strict";
-    angular.module('gacobom').directive("gcbMediaManager", function () {
+    angular.module('gacobom').directive("gcbMediaManager", [function () {
         return {
             restrict: "E",
             templateUrl: "views/directives/gcb-media-manager.html",
@@ -24,5 +24,5 @@
 
             }
         };
-    });
+    }]);
 }());
