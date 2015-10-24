@@ -127,16 +127,17 @@
     border: dotted 3px red;
 }
 
-/* Default class applied to drop zones on over */
 
-#sidebar li {
+#gcb-nav-group li {
     width: 228px;
 }
 
-#sidebar li.active {
+#gcb-nav-group li.active {
     border: 0 #eee solid;
     border-right-width: 5px;
 }
+
+/* Default class applied to drop zones on hover */
 
 .gcb-file-hover {
     border: 3px solid green;

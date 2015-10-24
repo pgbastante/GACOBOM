@@ -1,13 +1,5 @@
 <div class = "row gcb-game-edit-form" ng-controller = "GameEditCtrl as game">
-    <div class = "col-md-3 hidden-sm hidden-xs" id = "leftCol">
-
-        <ul class = "nav nav-stacked" id = "sidebar">
-            <li><a href = "#general">General Game Info</a></li>
-            <li><a href = "#media">Media FIles</a></li>
-            <li><a href = "#credits">Credits</a></li>
-            <li><a href = "#extra">Extra Information</a></li>
-        </ul>
-    </div>
+    <gcb-sidenav class = "col-md-3 hidden-sm hidden-xs" options = "game.options"></gcb-sidenav>
     <div class = "col-md-9 col-xs-12">
         <form>
             <div class = "form-horizontal">
@@ -148,6 +140,7 @@
                         <select class = "form-control" id = "rating"></select>
                     </div>
                 </div>
+
                 <h2 id = "media">Media Files
                     <small><span class = "glyphicon glyphicon-plus positive"
                                  ng-click = "game.uploadVisibility = !game.uploadVisibility"></span></small>
@@ -155,10 +148,12 @@
                 <gcb-media-manager media-files = "game.mediaFiles"
                                    url = "{{game.url}}"
                                    upload-visibility = "game.uploadVisibility"></gcb-media-manager>
+
                 <h2 id = "credits">Credits
                     <small><span class = "glyphicon glyphicon-plus positive"></span></small>
                 </h2>
                 <gcb-credits-manager credits = "game.data.credits"></gcb-credits-manager>
+
                 <h2 id = "extra">Extra Information
                     <small><span class = "glyphicon glyphicon-plus positive"></span></small>
                 </h2>

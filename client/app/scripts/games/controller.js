@@ -26,27 +26,19 @@
 
             ctrlr.uploadVisibility = false;
 
-            $('#sidebar').find('a').on('click', function (e) {
-                e.preventDefault();
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 50
-                    }, 1000);
-                    return false;
-                }
-                return true;
-            });
-
-            /* activate scrollspy menu */
-            var $body = $(document.body);
-            var navHeight = $('.navbar').outerHeight(true) + 10;
-
-            $body.scrollspy({
-                target: '#leftCol',
-                offset: navHeight
-            });
+            ctrlr.options = [{
+                key: 'general',
+                name: 'General Game Info'
+            }, {
+                key: 'media',
+                name: 'Media Files'
+            }, {
+                key: 'credits',
+                name: 'Credits'
+            }, {
+                key: 'extra',
+                name: 'Extra Information'
+            }];
 
         }]);
 }());
