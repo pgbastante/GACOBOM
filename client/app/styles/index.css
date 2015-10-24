@@ -48,3 +48,11 @@ body {
 .media-list {
     padding: 80px 15px;
 }
+
+/*
+  Fix for align on small screens on td
+*/
+
+table td {
+    vertical-align: middle !important;
+}

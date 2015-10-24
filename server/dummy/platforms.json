@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "MsDos"
+  },
+  {
+    "id": 2,
+    "name": "Windows 95"
+  },
+  {
+    "id": 3,
+    "name": "XBox"
+  },
+  {
+    "id": 4,
+    "name": "Windows 98"
+  },
+  {
+    "id": 5,
+    "name": "Windows XP"
+  },
+  {
+    "id": 6,
+    "name": "Sega Mega Drive"
+  },
+  {
+    "id": 7,
+    "name": "Super Nintendo"
+  },
+  {
+    "id": 8,
+    "name": "Wii"
+  },
+  {
+    "id": 9,
+    "name": "Wii U"
+  }
+]

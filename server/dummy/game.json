@@ -8,6 +8,12 @@
     "name": "Doom",
     "order": 2
   },
+  "platforms": [
+    {
+      "id": 1,
+      "name": "MsDos"
+    }
+  ],
   "manual": true,
   "publishers": [
     {
@@ -26,7 +32,7 @@
     }
   ],
   "path": "",
-  "released": 781747200,
+  "released": 1297076700000,
   "rating": {
     "id": 1,
     "name": "Mature"
@@ -57,99 +63,128 @@
     {
       "id": 1,
       "name": "1001 Video Games",
-      "notes": "<p>Doom II: Hell on Earth appears in the book 1001 Video Games You Must Play Before You Die by General Editor Tony Mott.</p>"
+      "notes": "<p>Doom II: Hell on Earth appears in the book 1001 Video Games You Must Play Before You Die by General Editor Tony Mott.</p>",
+      "group": "trivia"
     },
     {
       "id": 2,
       "name": "Arcade Version",
-      "notes": "<p>In the 1997 film Grosse Point Blank a store clerk can be seen playing on a DOOM II arcade cabinet. An arcade version was however never released and the game seen in the film is a film prop with a PC inside.</p>"
+      "notes": "<p>In the 1997 film Grosse Point Blank a store clerk can be seen playing on a DOOM II arcade cabinet. An arcade version was however never released and the game seen in the film is a film prop with a PC inside.</p>",
+      "group": "trivia"
     },
     {
       "id": 3,
       "name": "Boss' Sound File",
-      "notes": "<p>If you play the boss' sound file backwards, it says 'To win the game, you must beat me, John Romero.' John Romero is one of the developers.</p>"
+      "notes": "<p>If you play the boss' sound file backwards, it says 'To win the game, you must beat me, John Romero.' John Romero is one of the developers.</p>",
+      "group": "trivia"
     }
   ],
   "media": [
     {
       "id": 1,
-      "text": "",
+      "name": "m1",
+      "description": "",
       "type": "video",
-      "url": "/games/1/media/1"
+      "url": "/games/1/media/1",
+      "group": "media"
     },
     {
       "id": 2,
-      "text": "this is some text",
+      "name": "m2",
+      "description": "this is some text",
       "type": "image",
-      "url": "/games/1/media/2"
+      "url": "/games/1/media/2",
+      "group": "media"
     },
     {
       "id": 3,
-      "text": "",
+      "name": "m3",
+      "description": "",
       "type": "video",
-      "url": "/games/1/media/3"
+      "url": "/games/1/media/3",
+      "group": "media"
     },
     {
       "id": 4,
-      "text": "and more text",
+      "name": "m4",
+      "description": "and more text",
       "type": "video",
-      "url": "/games/1/media/4"
+      "url": "/games/1/media/4",
+      "group": "media"
     },
     {
       "id": 5,
-      "text": "",
+      "name": "m5",
+      "description": "",
       "type": "video",
-      "url": "/games/1/media/5"
+      "url": "/games/1/media/5",
+      "group": "media"
     },
     {
       "id": 6,
-      "text": "",
+      "name": "m6",
+      "description": "",
       "type": "video",
-      "url": "/games/1/media/6"
+      "url": "/games/1/media/6",
+      "group": "media"
     },
     {
-      "id": 6,
-      "text": "",
+      "id": 7,
+      "name": "m7",
+      "description": "",
       "type": "video",
-      "url": "/games/1/media/7"
+      "url": "/games/1/media/7",
+      "group": "media"
     }
   ],
   "artwork": [
     {
-      "id": 1,
-      "text": "",
+      "id": 8,
+      "name": "a8",
+      "description": "",
       "type": "image",
-      "url": "/games/1/art/1"
+      "url": "/games/1/media/8",
+      "group": "artwork"
     },
     {
-      "id": 2,
-      "text": "",
+      "id": 9,
+      "name": "a9",
+      "description": "",
       "type": "image",
-      "url": "/games/1/art/2"
+      "url": "/games/1/media/9",
+      "group": "artwork"
     },
     {
-      "id": 3,
-      "text": "",
+      "id": 10,
+      "name": "a10",
+      "description": "",
       "type": "image",
-      "url": "/games/1/art/3"
+      "url": "/games/1/media/10",
+      "group": "artwork"
     },
     {
-      "id": 4,
-      "text": "",
+      "id": 11,
+      "name": "a11",
+      "description": "",
       "type": "image",
-      "url": "/games/1/art/4"
+      "url": "/games/1/media/11",
+      "group": "artwork"
     },
     {
-      "id": 5,
-      "text": "",
+      "id": 12,
+      "name": "m12",
+      "description": "",
       "type": "image",
-      "url": "/games/1/art/5"
+      "url": "/games/1/media/12",
+      "group": "artwork"
     },
     {
-      "id": 6,
-      "text": "",
+      "id": 13,
+      "name": "a13",
+      "description": "",
       "type": "image",
-      "url": "/games/1/art/6"
+      "url": "/games/1/media/13",
+      "group": "artwork"
     }
   ],
   "links": [
@@ -171,6 +206,7 @@
   ],
   "credits": [
     {
+
       "id": 1,
       "name": "Programmer",
       "people": [
@@ -200,7 +236,7 @@
       "id": 1,
       "name": "Walkthrough",
       "last_update": "25/10/2014",
-      "type": "Guide",
+      "type": "guide",
       "files": [
         {
           "id": 1,
@@ -224,14 +260,16 @@
           "url": "/games/1/file/3"
         }
       ],
-      "notes": "<p>Game Walkthrough</p>"
+      "notes": "<p>Game Walkthrough</p>",
+      "group": "cheats"
     },
     {
       "id": 2,
       "name": "Cheats",
       "last_update": "25/10/2014",
-      "type": "Guide",
-      "notes": "<p><ul><li>idkfa</li><li>iddqd</li></ul></p>"
+      "type": "guide",
+      "notes": "<p><ul><li>idkfa</li><li>iddqd</li></ul></p>",
+      "group": "cheats"
     }
   ],
   "versions": [
@@ -239,6 +277,7 @@
       "id": 1,
       "name": "Game files",
       "type": "game",
+      "last_update": 1444683153000,
       "files": [
         {
           "id": 4,
@@ -253,7 +292,8 @@
           "id": 1,
           "name": "MsDos"
         }
-      ]
+      ],
+      "group": "versions"
     },
     {
       "id": 1,
@@ -267,7 +307,8 @@
           "size": "1MB",
           "url": "/games/1/file/5"
         }
-      ]
+      ],
+      "group": "versions"
     }
   ]
 }

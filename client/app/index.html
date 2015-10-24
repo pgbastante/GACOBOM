@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href = "bower_components/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel = "stylesheet">
 
     <!-- Custom styles for this template -->
     <link href = "styles/index.css" rel = "stylesheet">
@@ -28,7 +29,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body flow-prevent-drop>
 
 <nav class = "navbar navbar-inverse navbar-fixed-top" ng-controller = "commonCtrl as cmController">
     <div class = "container">
@@ -83,28 +84,43 @@
 <script src = "bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src = "bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <script src = "bower_components/angular/angular.js"></script>
 <script src = "bower_components/angular-route/angular-route.js"></script>
 <script src = "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src = "bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src = "bower_components/angular-resource/angular-resource.min.js"></script>
+<script src = "bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+<script src = "bower_components/ng-flow/dist/ng-flow-standalone.min.js"></script>
+
+
+<script src = "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
 <script src = "app.js"></script>
 <script src = "scripts/common/controller.js"></script>
 <script src = "scripts/common/service.js"></script>
 <script src = "scripts/games/controller.js"></script>
 <script src = "scripts/games/service.js"></script>
+<script src = "scripts/platforms/service.js"></script>
+
 <script src = "scripts/directives/gcb-info.js"></script>
 <script src = "scripts/directives/gcb-info-check.js"></script>
 <script src = "scripts/directives/gcb-info-repeat.js"></script>
 <script src = "scripts/directives/gcb-thumbnails.js"></script>
 <script src = "scripts/directives/gcb-extra-content.js"></script>
+<script src = "scripts/directives/gcb-extra-content-manager.js"></script>
 <script src = "scripts/directives/gcb-metascore.js"></script>
 <script src = "scripts/directives/gcb-credits.js"></script>
+<script src = "scripts/directives/gcb-credits-manager.js"></script>
 <script src = "scripts/directives/gcb-links.js"></script>
 <script src = "scripts/directives/gcb-cover.js"></script>
 <script src = "scripts/directives/gcb-media.js"></script>
 <script src = "scripts/directives/gcb-media-list.js"></script>
+<script src = "scripts/directives/gcb-media-manager.js"></script>
+<script src = "scripts/directives/gcb-tags.js"></script>
+<script src = "scripts/directives/gcb-form-date.js"></script>
+
+
 <script src = "scripts/splash/splash.js"></script>
 
 

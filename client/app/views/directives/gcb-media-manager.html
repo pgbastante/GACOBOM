@@ -1,0 +1,41 @@
+<div class = "table-responsive">
+    <table class = "table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Filename</th>
+            <th><label for = "file-description">Description</label></th>
+            <th>Type</th>
+            <th><label for = "file-group">Group</label></th>
+            <th></th>
+        </tr>
+        <tr ng-repeat = "file in mediaFiles">
+            <td>
+                <span ng-bind = "file.id"></span>
+            </td>
+            <td>
+                <span ng-bind = "file.name"></span>
+            </td>
+            <td>
+                <input id = "file-description"
+                       class = "form-control input-sm"
+                       type = "text"
+                       ng-model = "file.description">
+            </td>
+            <td>
+                <span ng-bind = "file.type"></span>
+            </td>
+            <td>
+                <select id = "file-group" class = "form-control input-sm" ng-model = "file.group">
+                    <option value = "media">Media</option>
+                    <option value = "artwork">Artwork</option>
+                </select>
+
+            </td>
+            <td>
+                <span>
+                    <a ng-click = "delete(file.id)"><span class = "glyphicon negative glyphicon-remove"></span></a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>

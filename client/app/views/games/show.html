@@ -11,7 +11,7 @@
                 <rating ng-model = "game.data.score" max = "10"></rating>
             </div>
 
-            <div class = "row details-menu panel panel-default">
+            <div class = "row details-menu panel panel-primary">
                 <gcb-info-repeat label = "Publisher" val = "game.data.publishers"></gcb-info-repeat>
                 <gcb-info-repeat label = "Released" val = "game.data.developers"></gcb-info-repeat>
                 <gcb-info label = "Released" val = "game.data.released"></gcb-info>
@@ -21,18 +21,22 @@
                 <gcb-metascore metascore = "game.data.metascore"></gcb-metascore>
                 <gcb-info label = "Rating" val = "game.data.rating.name"></gcb-info>
             </div>
-            <div class = "row panel panel-default">
+            <div class = "row panel panel-primary">
                 <div class = "panel-heading">
                     <h3 class = "panel-title">User data</h3>
                 </div>
                 <gcb-info-check label = "Played" val = "game.data.played"></gcb-info-check>
             </div>
-            <div class = "row panel panel-default">
+            <div class = "row">
                 <gcb-credits credits = "game.data.credits"></gcb-credits>
             </div>
         </div>
 
         <div class = "col-xs-12 col-sm-7 well col-sm-offset-1">
+            <a class = "btn btn-default"
+               ng-href = "/games/{{game.data.id}}/edit"
+               role = "button"><span class = "glyphicon glyphicon-pencil"></span></a>
+
             <div class = "row tab_container">
                 <div>
                     <h3>Description</h3>

@@ -15,6 +15,10 @@
     color: #ff0000;
 }
 
+.panel-heading span.negative {
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
 .rating {
     text-align: center;
     padding-top: 10px;
@@ -30,12 +34,6 @@
 
 .cover {
     text-align: center;
-}
-
-.panel-heading {
-    background-color: #337ab7 !important;
-    color: #ffffff !important;
-    font-weight: bold !important;
 }
 
 .game-main-form {
@@ -69,6 +67,74 @@
     text-align: justify;
 }
 
-.gcb-img-modal{
+.gcb-img-modal {
     margin: auto;
 }
+
+.gcb-game-edit-form {
+    padding-top: 60px;
+}
+
+.nav-stacked {
+    position: fixed;
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
+}
+
+.tt-menu {
+    width: 422px;
+    margin: 12px 0;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+.my-drop-zone {
+    border: dotted 3px lightgray;
+}
+
+.nv-file-over {
+    border: dotted 3px red;
+}
+
+/* Default class applied to drop zones on over */
+
+#sidebar li {
+    width: 228px;
+}
+
+#sidebar li.active {
+    border: 0 #eee solid;
+    border-right-width: 5px;
+}
+

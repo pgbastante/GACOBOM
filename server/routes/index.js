@@ -27,18 +27,28 @@ router.get('/games/:id/media/:mediaId', function (req, res) {
     res.sendFile(filePath);
 });
 
-router.get('/games/:id/art/:artId', function (req, res) {
-    var filePath = path.join(__dirname, '../dummy/artwork_example.jpg');
-    res.sendFile(filePath);
-});
-
 router.get('/games/:id/file/:artId', function (req, res) {
     var filePath = path.join(__dirname, '../dummy/walkthrough.txt');
     res.download(filePath);
 });
 
-router.get('/count', function (req, res, next) {
-    res.status(200).json({"games": 100, "books": 200, "comics": 10000});
+router.post('/games/:id/media', function (req, res) {
+    res.json({id: 14, name: 'filename', description: 'desc', type: 'image', group: 'media'});
 });
+
+router.get('/count', function (req, res, next) {
+    res.status(200).json({games: 100, books: 200, comics: 10000});
+});
+
+router.get('/platforms', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/platforms.json');
+    res.sendFile(filePath);
+});
+
+router.get('/companies', function (req, res) {
+    var filePath = path.join(__dirname, '../dummy/companies.json');
+    res.sendFile(filePath);
+});
+
 
 module.exports = router;

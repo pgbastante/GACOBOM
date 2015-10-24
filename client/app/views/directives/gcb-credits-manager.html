@@ -1,0 +1,16 @@
+<table class = "table table-striped">
+    <tr>
+        <th>Role</th>
+        <th>Person</th>
+    </tr>
+    <tr ng-repeat = "role in credits">
+        <td ng-bind = "role.name" class = "form-control-static"></td>
+        <td>
+            <div ng-repeat = "person in role.people">
+                {{person.name}}
+                <a ng-click = "delete(role.id,person.id)"><span class = "glyphicon negative glyphicon-remove"></span></a>
+            </div>
+        </td>
+    </tr>
+
+</table>
