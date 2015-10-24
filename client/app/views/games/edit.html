@@ -150,76 +150,11 @@
                 </div>
                 <h2 id = "media">Media Files
                     <small><span class = "glyphicon glyphicon-plus positive"
-                                 ng-click = "game.addMedia = !game.addMedia"></span></small>
+                                 ng-click = "game.uploadVisibility = !game.uploadVisibility"></span></small>
                 </h2>
-
-                <div ng-show = "game.addMedia"
-                     flow-init = "{target: 'http://app.gacobom.com/games/1/media', testChunks:false}">
-                    <div flow-drag-enter = "style={border:'3px solid green'}"
-                         flow-drag-leave = "style={}"
-                         flow-file-success = "game.onFileUpload( $file, $message, $flow )"
-                         ng-style = "style"
-                         flow-drop
-                         class = "well my-drop-zone">
-
-                        <span class = "btn btn-default" flow-btn>Upload File</span> <span>OR drop files here</span>
-                    </div>
-                    <div ng-show = "$flow.files.length > 0">
-                        <p>
-
-                            <a class = "btn btn-small btn-success"
-                               ng-click = "$flow.resume()"><span class = "glyphicon glyphicon-upload"></span><span class = "hidden-xs">Upload</span></a>
-                            <a class = "btn btn-small btn-danger"
-                               ng-click = "$flow.pause()"><span class = "glyphicon glyphicon-pause"></span><span class = "hidden-xs">Pause</span></a>
-                            <a class = "btn btn-small btn-info"
-                               ng-click = "$flow.cancel()"><span class = "glyphicon glyphicon-remove"></span><span class = "hidden-xs">Cancel</span></a>
-                            <span class = "label label-info">Size: {{$flow.getSize() | bytes}}</span>
-                            <span class = "label label-info">Is Uploading: {{$flow.isUploading()}}</span>
-                        </p>
-
-                        <div class = "table-responsive">
-                            <table class = "table table-striped " flow-transfers>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Size</th>
-                                    <th>Progress</th>
-                                    <th>Status</th>
-                                    <th>Settings</th>
-                                </tr>
-                                <tr ng-repeat = "file in $flow.files">
-                                    <td>{{$index+1}}</td>
-                                    <td class = "td-name-wrap">{{file.name}}</td>
-                                    <td>{{file.size | bytes}}</td>
-                                    <td>{{file.progress()}}</td>
-                                    <td>{{game.getFileStatus(file)}}</td>
-                                    <td>
-                                        <div class = "btn-group btn-group-xs">
-                                            <a class = "btn btn-warning"
-                                               ng-click = "file.pause()"
-                                               ng-hide = "file.paused"
-                                               tooltip = "Pause"> <span class = "glyphicon glyphicon-pause"></span><span
-                                                    class = "hidden-xs">Pause</span> </a> <a class = "btn btn-warning"
-                                                                                             ng-click = "file.resume()"
-                                                                                             ng-show = "file.paused"
-                                                                                             tooltip = "Resume"> <span
-                                                class = "glyphicon glyphicon-play"></span><span class = "hidden-xs">Resume</span>
-                                        </a> <a class = "btn btn-danger" ng-click = "file.cancel()" tooltip = "Cancel">
-                                            <span class = "glyphicon glyphicon-remove"></span><span class = "hidden-xs">Cancel</span>
-                                        </a> <a class = "btn btn-info"
-                                                ng-click = "file.retry()"
-                                                ng-if = "file.error"
-                                                tooltip = "Retry">
-                                            <span class = "glyphicon glyphicon-repeat"></span><span class = "hidden-xs">Retry</span>
-                                        </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <gcb-media-manager media-files = "game.mediaFiles"></gcb-media-manager>
+                <gcb-media-manager media-files = "game.mediaFiles"
+                                   url = "{{game.url}}"
+                                   upload-visibility = "game.uploadVisibility"></gcb-media-manager>
                 <h2 id = "credits">Credits
                     <small><span class = "glyphicon glyphicon-plus positive"></span></small>
                 </h2>

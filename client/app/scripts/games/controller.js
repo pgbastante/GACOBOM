@@ -25,32 +25,17 @@
 
             getGame();
         }])
-        .controller('GameEditCtrl', ['$routeParams', 'gamesFactory', function ($routeParams, gamesFactory) {
+        .controller('GameEditCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, API_SETTINGS) {
             var ctrlr = this;
+
+            ctrlr.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
 
             ctrlr.data = gamesFactory.get({id: $routeParams.id}, function (game) {
                 ctrlr.mediaFiles = $.merge(game.media, game.artwork);
                 ctrlr.extras = $.merge($.merge(game.versions, game.trivia), game.cheats);
             });
 
-            ctrlr.getFileStatus = function (file) {
-                if (file.error) {
-                    return 'Error';
-                }
-                if (file.isComplete()) {
-                    return 'Complete';
-                }
-                if (file.isUploading()) {
-                    return 'Uploading';
-                }
-                return 'Paused';
-            };
-
-            ctrlr.onFileUpload = function ($file, $message) {
-                ctrlr.mediaFiles.push(JSON.parse($message));
-            };
-
-            ctrlr.addMedia = false;
+            ctrlr.uploadVisibility = false;
 
             $('#sidebar').find('a').on('click', function (e) {
                 e.preventDefault();

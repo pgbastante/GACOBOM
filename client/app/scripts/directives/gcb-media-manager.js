@@ -7,7 +7,9 @@
             restrict: "E",
             templateUrl: "views/directives/gcb-media-manager.html",
             scope: {
-                mediaFiles: "="
+                mediaFiles: "=",
+                url: "@",
+                uploadVisibility: "="
             },
             controller: function ($scope) {
                 $scope.delete = function (id) {
@@ -15,6 +17,11 @@
                         return e.id !== id;
                     });
                 };
+
+                $scope.onMediaUpload = function (file, message, flow) {
+                    $scope.mediaFiles.push(JSON.parse(message));
+                };
+
             }
         };
     });
