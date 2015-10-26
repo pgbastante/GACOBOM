@@ -141,23 +141,17 @@
                     </div>
                 </div>
 
-                <h2 id = "media">Media Files
-                    <small><span class = "glyphicon glyphicon-plus positive"
-                                 ng-click = "game.uploadVisibility = !game.uploadVisibility"></span></small>
-                </h2>
                 <gcb-media-manager media-files = "game.mediaFiles"
-                                   url = "{{game.url}}"
-                                   upload-visibility = "game.uploadVisibility"></gcb-media-manager>
+                                   url = "{{game.url}}" title = "Media Files" anchor = "media"></gcb-media-manager>
 
-                <h2 id = "credits">Credits
-                    <small><span class = "glyphicon glyphicon-plus positive"></span></small>
-                </h2>
-                <gcb-credits-manager credits = "game.data.credits"></gcb-credits-manager>
+                <gcb-credits-manager credits = "game.data.credits"
+                                     title = "Credits"
+                                     anchor = "credits"></gcb-credits-manager>
 
-                <h2 id = "extra">Extra Information
-                    <small><span class = "glyphicon glyphicon-plus positive"></span></small>
-                </h2>
-                <gcb-extra-content-manager extras = "game.extras" url = "{{game.url}}"></gcb-extra-content-manager>
+                <gcb-extra-content-manager extras = "game.extras"
+                                           add-extra = "game.addExtra()"
+                                           title = "Extra Information"
+                                           anchor = "extra"></gcb-extra-content-manager>
             </div>
         </form>
     </div>

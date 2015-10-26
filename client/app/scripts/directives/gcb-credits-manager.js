@@ -8,7 +8,9 @@
             restrict: "E",
             templateUrl: "views/directives/gcb-credits-manager.html",
             scope: {
-                credits: "="
+                credits: "=",
+                title: "@",
+                anchor: "@"
             },
             controller: function ($scope) {
                 $scope.delete = function (roleId, personId) {

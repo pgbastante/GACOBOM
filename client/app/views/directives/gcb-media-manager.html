@@ -1,3 +1,8 @@
+<h2 id = "{{anchor}}">{{title}}
+    <small><span class = "glyphicon glyphicon-plus positive"
+                 ng-click = "uploadVisibility = !uploadVisibility"></span></small>
+</h2>
+
 <gcb-file-uploader ng-show = "uploadVisibility"
                    upload-to = "{{url}}/media"
                    on-file-success = "onMediaUpload(file, message, flow)"></gcb-file-uploader>

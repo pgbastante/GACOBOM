@@ -36,6 +36,13 @@ router.post('/games/:id/media', function (req, res) {
     res.json({id: 14, name: 'filename', description: 'desc', type: 'image', group: 'media'});
 });
 
+router.post('/games/:id/extras', function (req, res) {
+    res.json({
+        id: 44,
+        name: "New Extra"
+    });
+});
+
 router.get('/count', function (req, res, next) {
     res.status(200).json({games: 100, books: 200, comics: 10000});
 });

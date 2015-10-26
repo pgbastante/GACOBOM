@@ -3,13 +3,15 @@
 
 (function () {
     "use strict";
-    angular.module('gacobom').directive("gcbExtraContentManager", [function () {
+    angular.module('gacobom').directive("gcbExtraContentManager", function () {
         return {
             restrict: "E",
             templateUrl: "views/directives/gcb-extra-content-manager.html",
             scope: {
                 extras: "=",
-                url: "@"
+                addExtra: "&",
+                title: "@",
+                anchor: "@"
             },
             controller: function ($scope) {
                 $scope.delete = function (id) {
@@ -30,7 +32,13 @@
                         }
                     });
                 };
+
+                $scope.addExtraItem = function () {
+                    $scope.addExtra().$promise.then(function (res) {
+                        $scope.extras.push({id: res.id, name: res.name});
+                    });
+                };
             }
         };
-    }]);
+    });
 }());

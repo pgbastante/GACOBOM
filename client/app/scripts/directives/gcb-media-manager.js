@@ -9,7 +9,9 @@
             scope: {
                 mediaFiles: "=",
                 url: "@",
-                uploadVisibility: "="
+                uploadVisibility: "=",
+                title: "@",
+                anchor: "@"
             },
             controller: function ($scope) {
                 $scope.delete = function (id) {
@@ -17,6 +19,8 @@
                         return e.id !== id;
                     });
                 };
+
+                $scope.uploadVisibility = false;
 
                 $scope.onMediaUpload = function (file, message, flow) {
                     $scope.mediaFiles.push(JSON.parse(message));

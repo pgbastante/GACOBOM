@@ -14,7 +14,7 @@
             ctrlr.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
             ctrlr.data = gamesFactory.get({id: $routeParams.id});
         }])
-        .controller('GameEditCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, API_SETTINGS) {
+        .controller('GameEditCtrl', ['$routeParams', 'gamesFactory', 'gameExtrasFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, gamesExtrasFactory, API_SETTINGS) {
             var ctrlr = this;
 
             ctrlr.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
@@ -23,8 +23,6 @@
                 ctrlr.mediaFiles = $.merge(game.media, game.artwork);
                 ctrlr.extras = $.merge($.merge(game.versions, game.trivia), game.cheats);
             });
-
-            ctrlr.uploadVisibility = false;
 
             ctrlr.options = [{
                 key: 'general',
@@ -39,6 +37,10 @@
                 key: 'extra',
                 name: 'Extra Information'
             }];
+
+            ctrlr.addExtra = function () {
+                return gamesExtrasFactory.save({gameId: $routeParams.id});
+            };
 
         }]);
 }());
