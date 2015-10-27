@@ -142,7 +142,9 @@
                 </div>
 
                 <gcb-media-manager media-files = "game.mediaFiles"
-                                   url = "{{game.url}}" title = "Media Files" anchor = "media"></gcb-media-manager>
+                                   url = "{{game.url}}"
+                                   title = "Media Files"
+                                   anchor = "media"></gcb-media-manager>
 
                 <gcb-credits-manager credits = "game.data.credits"
                                      title = "Credits"
@@ -151,7 +153,8 @@
                 <gcb-extra-content-manager extras = "game.extras"
                                            add-extra = "game.addExtra()"
                                            title = "Extra Information"
-                                           anchor = "extra"></gcb-extra-content-manager>
+                                           anchor = "extra"
+                                           url = "{{game.url}}"></gcb-extra-content-manager>
             </div>
         </form>
     </div>

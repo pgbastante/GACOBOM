@@ -12,7 +12,8 @@
             <th>#</th>
             <th>Filename</th>
             <th><label for = "file-description">Description</label></th>
-            <th>Type</th>
+            <th>Ext</th>
+            <th>Size</th>
             <th><label for = "file-group">Group</label></th>
             <th></th>
         </tr>
@@ -25,15 +26,16 @@
             </td>
             <td>
                 <input id = "file-description"
-                       class = "form-control input-sm"
-                       type = "text"
-                       ng-model = "file.description">
+                       class = "form-control input-sm" type = "text" ng-model = "file.meta.description">
             </td>
             <td>
-                <span ng-bind = "file.type"></span>
+                <span ng-bind = "file.ext"></span>
             </td>
             <td>
-                <select id = "file-group" class = "form-control input-sm" ng-model = "file.group">
+                <span ng-bind = "file.size | bytes"></span>
+            </td>
+            <td>
+                <select id = "file-group" class = "form-control input-sm" ng-model = "file.meta.group">
                     <option value = "media">Media</option>
                     <option value = "artwork">Artwork</option>
                 </select>

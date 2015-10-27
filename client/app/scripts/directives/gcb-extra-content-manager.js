@@ -11,25 +11,13 @@
                 extras: "=",
                 addExtra: "&",
                 title: "@",
-                anchor: "@"
+                anchor: "@",
+                url: "@"
             },
             controller: function ($scope) {
                 $scope.delete = function (id) {
                     $scope.extras = $.grep($scope.extras, function (e) {
                         return e.id !== id;
-                    });
-                };
-
-                $scope.deleteFile = function (extraId, fileId) {
-
-                    angular.forEach($scope.extras, function (extra) {
-                        if (extra.id === extraId) {
-                            if (extra.files !== undefined) {
-                                extra.files = $.grep(extra.files, function (file) {
-                                    return file.id !== fileId;
-                                });
-                            }
-                        }
                     });
                 };
 

@@ -33,7 +33,7 @@ router.get('/games/:id/file/:artId', function (req, res) {
 });
 
 router.post('/games/:id/media', function (req, res) {
-    res.json({id: 14, name: 'filename', description: 'desc', type: 'image', group: 'media'});
+    res.json({id: 14, name: 'filename', ext: 'jpg', size: 203104, meta: {description: 'desc', group: 'media'}});
 });
 
 router.post('/games/:id/extras', function (req, res) {
@@ -41,6 +41,10 @@ router.post('/games/:id/extras', function (req, res) {
         id: 44,
         name: "New Extra"
     });
+});
+
+router.post('/games/:id/extras/:extraId/files', function (req, res) {
+    res.json({id: 14, name: 'filename', ext: 'jpg', size: 20000});
 });
 
 router.get('/count', function (req, res, next) {

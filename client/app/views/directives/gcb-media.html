@@ -1,9 +1,9 @@
 <div class = "media-container">
-    <div ng-repeat = "item in items" class = "media-element">
-        <a class = "thumbnail game-thumbnail"> <img ng-src = "{{apiUrl + item.url}}" ng-click = "open(item)">
+    <div ng-repeat = "file in items" class = "media-element">
+        <a class = "thumbnail game-thumbnail"> <img ng-src = "{{apiUrl + file.meta.url}}" ng-click = "open(item)">
 
             <div class = "caption">
-                <p ng-bind-html = "item.text"></p>
+                <p ng-bind-html = "file.meta.description"></p>
             </div>
         </a>
     </div>

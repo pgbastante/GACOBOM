@@ -83,108 +83,147 @@
     {
       "id": 1,
       "name": "m1",
-      "description": "",
-      "type": "video",
-      "url": "/games/1/media/1",
-      "group": "media"
+      "ext": "jpg",
+      "size": 1000000,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "media"
+      }
     },
     {
       "id": 2,
       "name": "m2",
-      "description": "this is some text",
-      "type": "image",
-      "url": "/games/1/media/2",
-      "group": "media"
+      "ext": "avi",
+      "size": 10000000,
+      "meta": {
+        "description": "this is some text",
+        "url": "/games/1/media/2",
+        "group": "media"
+      }
     },
     {
       "id": 3,
       "name": "m3",
-      "description": "",
-      "type": "video",
-      "url": "/games/1/media/3",
-      "group": "media"
+      "ext": "jpg",
+      "size": 1000000,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/3",
+        "group": "media"
+      }
     },
     {
       "id": 4,
       "name": "m4",
-      "description": "and more text",
-      "type": "video",
-      "url": "/games/1/media/4",
-      "group": "media"
+      "ext": "jpg",
+      "size": 10,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/4",
+        "group": "media"
+      }
     },
     {
       "id": 5,
       "name": "m5",
-      "description": "",
-      "type": "video",
-      "url": "/games/1/media/5",
-      "group": "media"
+      "ext": "jpg",
+      "size": 100,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "media"
+      }
     },
     {
       "id": 6,
       "name": "m6",
-      "description": "",
-      "type": "video",
-      "url": "/games/1/media/6",
-      "group": "media"
+      "ext": "jpg",
+      "size": 100000,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "media"
+      }
     },
     {
       "id": 7,
       "name": "m7",
-      "description": "",
-      "type": "video",
-      "url": "/games/1/media/7",
-      "group": "media"
+      "ext": "jpg",
+      "size": 200,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "media"
+      }
     }
   ],
   "artwork": [
     {
       "id": 8,
-      "name": "a8",
-      "description": "",
-      "type": "image",
-      "url": "/games/1/media/8",
-      "group": "artwork"
+      "name": "m8",
+      "ext": "jpg",
+      "size": 30,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "artwork"
+      }
     },
     {
       "id": 9,
-      "name": "a9",
-      "description": "",
-      "type": "image",
-      "url": "/games/1/media/9",
-      "group": "artwork"
+      "name": "m9",
+      "ext": "jpg",
+      "size": 24432,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "artwork"
+      }
     },
     {
       "id": 10,
-      "name": "a10",
-      "description": "",
-      "type": "image",
-      "url": "/games/1/media/10",
-      "group": "artwork"
+      "name": "m10",
+      "ext": "jpg",
+      "size": 5131,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "artwork"
+      }
     },
     {
       "id": 11,
-      "name": "a11",
-      "description": "",
-      "type": "image",
-      "url": "/games/1/media/11",
-      "group": "artwork"
+      "name": "m11",
+      "ext": "jpg",
+      "size": 41234,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "artwork"
+      }
     },
     {
       "id": 12,
       "name": "m12",
-      "description": "",
-      "type": "image",
-      "url": "/games/1/media/12",
-      "group": "artwork"
+      "ext": "jpg",
+      "size": 532,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "artwork"
+      }
     },
     {
       "id": 13,
-      "name": "a13",
-      "description": "",
-      "type": "image",
-      "url": "/games/1/media/13",
-      "group": "artwork"
+      "name": "m13",
+      "ext": "jpg",
+      "size": 6234,
+      "meta": {
+        "description": "",
+        "url": "/games/1/media/1",
+        "group": "media"
+      }
     }
   ],
   "links": [
@@ -242,19 +281,19 @@
           "id": 1,
           "name": "w1",
           "ext": "txt",
-          "size": "66K"
+          "size": 66000
         },
         {
           "id": 2,
           "name": "w2",
           "ext": "txt",
-          "size": "1K"
+          "size": 1000
         },
         {
           "id": 3,
           "name": "w3",
           "ext": "jpg",
-          "size": "10MB"
+          "size": 10000000
         }
       ],
       "notes": "<p>Game Walkthrough</p>",
@@ -280,7 +319,7 @@
           "id": 4,
           "name": "doom2",
           "ext": "zip",
-          "size": "30MB"
+          "size": 30000000
         }
       ],
       "platforms": [
@@ -300,7 +339,7 @@
           "id": 1,
           "name": "manual",
           "ext": "pdf",
-          "size": "1MB"
+          "size": 1000000
         }
       ],
       "group": "versions"

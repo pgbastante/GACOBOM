@@ -1,0 +1,77 @@
+<div class = "panel panel-primary">
+    <div class = "panel-heading clearfix">
+        <div class = "pull-right">
+            <a ng-click = "delete(item.id)"><span class = "glyphicon glyphicon-remove negative"></span></a>
+
+            <div class = "clearfix"></div>
+        </div>
+    </div>
+    <div class = "panel-body">
+        <div class = "form-group">
+            <label for = "extraId" class = "col-sm-2 control-label">#id</label>
+
+            <div class = "col-sm-10">
+                <label ng-bind = "item.id" class = "form-control-static" id = "extraId"></label>
+            </div>
+        </div>
+        <div class = "form-group">
+            <label for = "extraName" class = "col-sm-2 control-label">Name</label>
+
+            <div class = "col-sm-10">
+                <input type = "text"
+                       class = "form-control"
+                       id = "extraName"
+                       placeholder = "Name"
+                       ng-model = "item.name">
+            </div>
+        </div>
+        <gcb-form-date label = "Updated" val = "item.last_update"></gcb-form-date>
+        <div class = "form-group">
+            <label for = "extraType" class = "col-sm-2 control-label">Type</label>
+
+            <div class = "col-sm-10">
+                <select class = "form-control" id = "extraType" ng-model = "item.type">
+                    <option value = ""></option>
+                    <option value = "manual">Manual</option>
+                    <option value = "game">Game</option>
+                    <option value = "guide">Guide</option>
+                    <option value = "map">Map</option>
+                </select>
+            </div>
+        </div>
+        <div class = "form-group">
+            <label for = "extraGroup" class = "col-sm-2 control-label">Group</label>
+
+            <div class = "col-sm-10">
+                <select class = "form-control" id = "extraGroup" ng-model = "item.group">
+                    <option value = ""></option>
+                    <option value = "versions">Versions</option>
+                    <option value = "cheats">Cheats</option>
+                    <option value = "trivia">Trivia</option>
+                </select>
+            </div>
+        </div>
+        <div class = "form-group">
+            <label for = "extraNotes" class = "col-sm-2 control-label">Notes</label>
+
+            <div class = "col-sm-10">
+                                <textarea class = "form-control"
+                                          id = "extraNotes"
+                                          placeholder = "Notes"
+                                          ng-model = "item.notes"></textarea>
+            </div>
+        </div>
+        <div class = "form-group">
+            <label class = "col-sm-2 control-label">Files</label>
+
+            <div class = "col-sm-10">
+                <gcb-file-uploader upload-to = "{{url}}/extras/{{item.id}}/files"
+                                   on-file-success = "onFileUpload(file, message, flow)"></gcb-file-uploader>
+                <p ng-repeat = "file in item.files" class = "form-control-static"><a href = "">{{file.name}}</a>
+                    ({{file.ext}},{{file.size |
+                    bytes}})<a ng-click = "deleteFile(file.id)"><span class = "glyphicon negative glyphicon-remove"></span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
