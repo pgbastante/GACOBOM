@@ -1,32 +1,37 @@
-/*global angular */
-/*global $*/
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbMediaManager", [function () {
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbMediaManager', [gcbMediaManager]);
+
+    function gcbMediaManager() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-media-manager.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-media-manager.html',
             scope: {
-                mediaFiles: "=",
-                url: "@",
-                uploadVisibility: "=",
-                title: "@",
-                anchor: "@"
+                mediaFiles: '=',
+                url: '@',
+                uploadVisibility: '=',
+                title: '@',
+                anchor: '@'
             },
-            controller: function ($scope) {
-                $scope.delete = function (id) {
-                    $scope.mediaFiles = $.grep($scope.mediaFiles, function (e) {
+            controller: function($scope) {
+                var vm = this;
+                vm.remove = remove;
+                vm.uploadVisibility = false;
+                vm.onMediaUpload = onMediaUpload;
+
+                function remove(id) {
+                    $scope.mediaFiles = $.grep($scope.mediaFiles, isMediaId);
+
+                    function isMediaId(e) {
                         return e.id !== id;
-                    });
-                };
+                    }
+                }
 
-                $scope.uploadVisibility = false;
-
-                $scope.onMediaUpload = function (file, message, flow) {
+                function onMediaUpload(file, message, flow) {
                     $scope.mediaFiles.push(JSON.parse(message));
-                };
-
-            }
+                }
+            },
+            controllerAs: 'mediaCtrl'
         };
-    }]);
+    }
 }());

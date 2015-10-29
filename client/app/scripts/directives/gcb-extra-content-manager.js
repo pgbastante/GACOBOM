@@ -1,32 +1,40 @@
-/*global angular */
-/*global $*/
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbExtraContentManager', [gcbExtraContentManager]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbExtraContentManager", function () {
+    function gcbExtraContentManager() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-extra-content-manager.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-extra-content-manager.html',
             scope: {
-                extras: "=",
-                addExtra: "&",
-                title: "@",
-                anchor: "@",
-                url: "@"
+                extras: '=',
+                addExtra: '&',
+                title: '@',
+                anchor: '@',
+                url: '@'
             },
-            controller: function ($scope) {
-                $scope.delete = function (id) {
-                    $scope.extras = $.grep($scope.extras, function (e) {
-                        return e.id !== id;
-                    });
-                };
+            controller: function($scope) {
+                var vm = this;
+                vm.remove = remove;
+                vm.add = add;
 
-                $scope.addExtraItem = function () {
-                    $scope.addExtra().$promise.then(function (res) {
+                function remove(id) {
+                    $scope.extras = $.grep($scope.extras, isExtraId);
+
+                    function isExtraId(extra) {
+                        return extra.id !== id;
+                    }
+                }
+
+                function add() {
+                    $scope.addExtra().$promise.then(addOk);
+
+                    function addOk(res) {
                         $scope.extras.push({id: res.id, name: res.name});
-                    });
-                };
-            }
+                    }
+                }
+            },
+            controllerAs: 'extraCtrl'
         };
-    });
+    }
 }());

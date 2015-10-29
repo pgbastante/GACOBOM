@@ -1,14 +1,14 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbCredits', [gcbCredits]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbCredits", [function () {
+    function gcbCredits() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-credits.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-credits.html',
             scope: {
-                credits: "="
+                credits: '='
             }
         };
-    }]);
+    }
 }());

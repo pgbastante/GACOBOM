@@ -1,16 +1,16 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbExtraContent', [gcbExtraContent]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbExtraContent", [function () {
+    function gcbExtraContent() {
 
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-extra-content.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-extra-content.html',
             scope: {
-                extras: "=",
+                extras: '=',
                 url: '@'
             }
         };
-    }]);
+    }
 }());

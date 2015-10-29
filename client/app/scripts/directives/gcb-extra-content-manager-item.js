@@ -1,33 +1,38 @@
-/*global angular */
-/*global $*/
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbExtraContentManagerItem', [gcbExtraContentManagerItem]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive('gcbExtraContentManagerItem', [function () {
+    function gcbExtraContentManagerItem() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-extra-content-manager-item.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-extra-content-manager-item.html',
             scope: {
-                item: "=",
-                url: "@"
+                item: '=',
+                url: '@'
             },
-            controller: function ($scope) {
-                $scope.deleteFile = function (fileId) {
+            require: '^gcbExtraContentManager',
+            controller: function($scope) {
+                var vm = this;
+                vm.deleteFile = deleteFile;
+                vm.onFileUpload = onFileUpload;
 
-                    $scope.item.files = $.grep($scope.item.files, function (file) {
+                function deleteFile(fileId) {
+                    $scope.item.files = $.grep($scope.item.files, isFileId);
+
+                    function isFileId(file) {
                         return file.id !== fileId;
-                    });
+                    }
+                }
 
-                };
-
-                $scope.onFileUpload = function (file, message, flow) {
+                function onFileUpload(file, message, flow) {
                     if ($scope.item.files === undefined) {
                         $scope.item.files = [];
                     }
                     $scope.item.files.push(JSON.parse(message));
-                };
-            }
+                }
+            },
+            controllerAs: 'extraItemCtrl'
         };
 
-    }]);
+    }
 }());

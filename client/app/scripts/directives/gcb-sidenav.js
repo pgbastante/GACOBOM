@@ -1,15 +1,17 @@
-/*global angular */
-/*global $*/
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbSidenav", ['$document', function ($document) {
+(function() {
+    'use strict';
+    angular.module('gacobom')
+        .directive('gcbSidenav', ['$document', gcbSidenav])
+        .directive('gcbSideNavOption', [gcbSideNavOption]);
+
+    function gcbSidenav($document) {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-sidenav.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-sidenav.html',
             scope: {
-                options: "="
+                options: '='
             },
-            link: function (scope, element) {
+            link: function(scope, element) {
                 scope.topOffset = angular.element(element).offset().top;
                 $document.find('body').scrollspy({
                     target: '#gcb-nav-group',
@@ -17,12 +19,14 @@
                 });
             }
         };
-    }]).directive("gcbSideNavOption", [function () {
-        return {
-            restrict: "A",
-            link: function (scope, element) {
+    }
 
-                angular.element(element).on('click', function (e) {
+    function gcbSideNavOption() {
+        return {
+            restrict: 'A',
+            link: function(scope, element) {
+
+                angular.element(element).on('click', function(e) {
                     e.preventDefault();
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -37,6 +41,5 @@
 
             }
         };
-
-    }]);
+    }
 }());

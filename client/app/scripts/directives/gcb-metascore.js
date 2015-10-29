@@ -1,14 +1,14 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbMetascore', [gcbMetascore]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbMetascore", [function () {
+    function gcbMetascore() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-metascore.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-metascore.html',
             scope: {
-                metascore: "="
+                metascore: '='
             }
         };
-    }]);
+    }
 }());

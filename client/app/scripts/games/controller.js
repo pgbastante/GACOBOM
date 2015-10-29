@@ -1,30 +1,42 @@
-/*global angular */
-/*global $*/
-(function () {
-    "use strict";
+(function() {
+    'use strict';
     angular.module('gacobom')
-        .controller('GamesListCtrl', ['gamesFactory', function (gamesFactory) {
-            var ctrlr = this;
-            ctrlr.list = gamesFactory.query(function (data) {
-                ctrlr.mediaCount = data.length;
-            });
-        }])
-        .controller('GameCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, API_SETTINGS) {
-            var ctrlr = this;
-            ctrlr.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
-            ctrlr.data = gamesFactory.get({id: $routeParams.id});
-        }])
-        .controller('GameEditCtrl', ['$routeParams', 'gamesFactory', 'gameExtrasFactory', 'API_SETTINGS', function ($routeParams, gamesFactory, gamesExtrasFactory, API_SETTINGS) {
-            var ctrlr = this;
+        .controller('GamesListCtrl', ['gamesFactory', GamesListCtrl])
+        .controller('GameCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', GameCtrl])
+        .controller('GameEditCtrl', [
+            '$routeParams',
+            'gamesFactory',
+            'gameExtrasFactory',
+            'API_SETTINGS',
+            GameEditCtrl]);
 
-            ctrlr.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
+    function GamesListCtrl(gamesFactory) {
+        var vm = this;
+        vm.list = gamesFactory.query(updateElementCount);
 
-            ctrlr.data = gamesFactory.get({id: $routeParams.id}, function (game) {
-                ctrlr.mediaFiles = $.merge(game.media, game.artwork);
-                ctrlr.extras = $.merge($.merge(game.versions, game.trivia), game.cheats);
-            });
+        function updateElementCount(data) {
+            vm.elementCount = data.length;
+        }
+    }
 
-            ctrlr.options = [{
+    function GameCtrl($routeParams, gamesFactory, API_SETTINGS) {
+        var vm = this;
+        vm.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
+        vm.data = gamesFactory.get({id: $routeParams.id});
+    }
+
+    function GameEditCtrl($routeParams, gamesFactory, gamesExtrasFactory, API_SETTINGS) {
+        var vm = this;
+
+        vm.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
+
+        vm.data = gamesFactory.get({id: $routeParams.id}, function(game) {
+            vm.mediaFiles = $.merge(game.media, game.artwork);
+            vm.extras = $.merge($.merge(game.versions, game.trivia), game.cheats);
+        });
+
+        vm.options = [
+            {
                 key: 'general',
                 name: 'General Game Info'
             }, {
@@ -38,11 +50,8 @@
                 name: 'Extra Information'
             }];
 
-            ctrlr.addExtra = function () {
-                return gamesExtrasFactory.save({gameId: $routeParams.id});
-            };
-
-        }]);
+        vm.addExtra = function() {
+            return gamesExtrasFactory.save({gameId: $routeParams.id});
+        };
+    }
 }());
-
-

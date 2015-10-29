@@ -1,20 +1,22 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbFormDate', [gcbFormDate]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbFormDate", [function () {
+    function gcbFormDate() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-form-date.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-form-date.html',
             scope: {
-                label: "@",
-                val: "="
+                label: '@',
+                val: '='
             },
-            controller: function ($scope) {
-                $scope.$watch("val", function () {
+            controller: function($scope) {
+                $scope.$watch('val', createDate);
+
+                function createDate() {
                     $scope.date = new Date($scope.val);
-                });
+                }
             }
         };
-    }]);
+    }
 }());

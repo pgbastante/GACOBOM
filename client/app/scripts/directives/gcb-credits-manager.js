@@ -1,30 +1,37 @@
-/*global angular */
-/*global $*/
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbCreditsManager', [gcbCreditsManager]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbCreditsManager", [function () {
+    function gcbCreditsManager() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-credits-manager.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-credits-manager.html',
             scope: {
-                credits: "=",
-                title: "@",
-                anchor: "@"
+                credits: '=',
+                title: '@',
+                anchor: '@'
             },
-            controller: function ($scope) {
-                $scope.delete = function (roleId, personId) {
-                    $scope.credits = $.grep($scope.credits, function (role) {
+            controller: function($scope) {
+                var vm = this;
+                vm.remove = remove;
+
+                function remove(roleId, personId) {
+                    $scope.credits = $.grep($scope.credits, removePerson);
+
+                    function removePerson(role) {
                         if (role.id !== roleId) {
                             return true;
                         }
-                        role.people = $.grep(role.people, function (person) {
-                            return person.id !== personId;
-                        });
+                        role.people = $.grep(role.people, isPersonId);
                         return role.people.length !== 0;
-                    });
-                };
-            }
+                    }
+
+                    function isPersonId(person) {
+                        return person.id !== personId;
+                    }
+                }
+            },
+            controllerAs: 'creditsCtrl'
         };
-    }]);
+    }
 }());

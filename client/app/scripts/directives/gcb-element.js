@@ -1,18 +1,18 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbElement', ['API_SETTINGS', gcbElement]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbElement", ['API_SETTINGS', function (API_SETTINGS) {
+    function gcbElement(API_SETTINGS) {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-element.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-element.html',
             scope: {
-                item: "=",
-                url: "@"
+                item: '=',
+                url: '@'
             },
-            link: function (scope) {
-                scope.media_cover = API_SETTINGS.API_URL + scope.item.url + '/cover';
+            link: function(scope) {
+                scope.mediaCover = API_SETTINGS.API_URL + scope.item.url + '/cover';
             }
         };
-    }]);
+    }
 }());

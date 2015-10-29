@@ -1,18 +1,18 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbElementList', [gcbElementList]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbElementList", [function () {
+    function gcbElementList() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-element-list.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-element-list.html',
             scope: {
-                items: "=",
-                limitPerPage: "=",
-                mediaCount: "=",
-                numPages: "=",
-                pageIndex: "="
+                items: '=',
+                limitPerPage: '=',
+                elementCount: '=',
+                numPages: '=',
+                pageIndex: '='
             }
         };
-    }]);
+    }
 }());

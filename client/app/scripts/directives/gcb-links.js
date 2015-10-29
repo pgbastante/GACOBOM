@@ -1,14 +1,14 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbLinks', [gcbLinks]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbLinks", [function () {
+    function gcbLinks() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-links.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-links.html',
             scope: {
-                links: "="
+                links: '='
             }
         };
-    }]);
+    }
 }());

@@ -12,7 +12,8 @@
         <td>
             <div ng-repeat = "person in role.people">
                 {{person.name}}
-                <a ng-click = "delete(role.id,person.id)"><span class = "glyphicon negative glyphicon-remove"></span></a>
+                <a ng-click="creditsCtrl.remove(role.id,person.id)"><span
+                        class="glyphicon negative glyphicon-remove"></span></a>
             </div>
         </td>
     </tr>

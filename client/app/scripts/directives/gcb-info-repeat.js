@@ -1,15 +1,15 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbInfoRepeat', [gcbInfoRepeat]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbInfoRepeat", [function () {
+    function gcbInfoRepeat() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-info-repeat.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-info-repeat.html',
             scope: {
-                label: "@",
-                val: "="
+                label: '@',
+                val: '='
             }
         };
-    }]);
+    }
 }());

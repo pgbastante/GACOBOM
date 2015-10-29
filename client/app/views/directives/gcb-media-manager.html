@@ -5,7 +5,7 @@
 
 <gcb-file-uploader ng-show = "uploadVisibility"
                    upload-to = "{{url}}/media"
-                   on-file-success = "onMediaUpload(file, message, flow)"></gcb-file-uploader>
+                   on-file-success="mediaCtrl.onMediaUpload(file, message, flow)"></gcb-file-uploader>
 <div class = "table-responsive">
     <table class = "table table-striped">
         <tr>
@@ -43,7 +43,8 @@
             </td>
             <td>
                 <span>
-                    <a ng-click = "delete(file.id)"><span class = "glyphicon negative glyphicon-remove"></span></a>
+                    <a ng-click="mediaCtrl.remove(file.id)"><span
+                            class="glyphicon negative glyphicon-remove"></span></a>
                 </span>
             </td>
         </tr>

@@ -1,7 +1,7 @@
 <div class = "panel panel-primary">
     <div class = "panel-heading clearfix">
         <div class = "pull-right">
-            <a ng-click = "delete(item.id)"><span class = "glyphicon glyphicon-remove negative"></span></a>
+            <a ng-click="remove(item.id)"><span class="glyphicon glyphicon-remove negative"></span></a>
 
             <div class = "clearfix"></div>
         </div>
@@ -66,10 +66,11 @@
 
             <div class = "col-sm-10">
                 <gcb-file-uploader upload-to = "{{url}}/extras/{{item.id}}/files"
-                                   on-file-success = "onFileUpload(file, message, flow)"></gcb-file-uploader>
+                                   on-file-success="extraItemCtrl.onFileUpload(file, message, flow)"></gcb-file-uploader>
                 <p ng-repeat = "file in item.files" class = "form-control-static"><a href = "">{{file.name}}</a>
                     ({{file.ext}},{{file.size |
-                    bytes}})<a ng-click = "deleteFile(file.id)"><span class = "glyphicon negative glyphicon-remove"></span></a>
+                    bytes}})<a ng-click="extraItemCtrl.deleteFile(file.id)"><span
+                            class="glyphicon negative glyphicon-remove"></span></a>
                 </p>
             </div>
         </div>

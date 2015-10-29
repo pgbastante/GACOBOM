@@ -1,15 +1,15 @@
-/*global angular */
+(function() {
+    'use strict';
+    angular.module('gacobom').directive('gcbInfoCheck', [gcbInfoCheck]);
 
-(function () {
-    "use strict";
-    angular.module('gacobom').directive("gcbInfoCheck", [function () {
+    function gcbInfoCheck() {
         return {
-            restrict: "E",
-            templateUrl: "views/directives/gcb-info-check.html",
+            restrict: 'E',
+            templateUrl: 'views/directives/gcb-info-check.html',
             scope: {
-                label: "@",
-                val: "="
+                label: '@',
+                val: '='
             }
         };
-    }]);
+    }
 }());
