@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('gacobom')
-        .config(['$locationProvider', '$routeProvider', appConfig]);
+        .config(appConfig);
+
+    appConfig.$inject = ['$locationProvider', '$routeProvider'];
 
     function appConfig($locationProvider, $routeProvider) {
         $locationProvider.html5Mode(true);

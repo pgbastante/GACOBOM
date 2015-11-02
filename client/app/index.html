@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gacobom">
+<html lang="en" ng-app="gacobom" ng-strict-di>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,7 @@
 
 <body flow-prevent-drop>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="topNavController as tnController">
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="TopNavController as tnController">
     <div class="container">
         <div class="navbar-header">
             <button type="button"
@@ -124,6 +124,7 @@
 <script src="scripts/directives/gcb-form-date.js"></script>
 <script src="scripts/directives/gcb-file-uploader.js"></script>
 <script src="scripts/directives/gcb-sidenav.js"></script>
+<script src="scripts/directives/gcb-sidenav-option.js"></script>
 
 <script src="scripts/splash/splash.js"></script>
 

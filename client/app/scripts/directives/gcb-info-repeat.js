@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbInfoRepeat', [gcbInfoRepeat]);
+    angular.module('gacobom').directive('gcbInfoRepeat', gcbInfoRepeat);
 
     function gcbInfoRepeat() {
         return {

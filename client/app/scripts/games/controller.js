@@ -1,14 +1,11 @@
 (function() {
     'use strict';
     angular.module('gacobom')
-        .controller('GamesListCtrl', ['gamesFactory', GamesListCtrl])
-        .controller('GameCtrl', ['$routeParams', 'gamesFactory', 'API_SETTINGS', GameCtrl])
-        .controller('GameEditCtrl', [
-            '$routeParams',
-            'gamesFactory',
-            'gameExtrasFactory',
-            'API_SETTINGS',
-            GameEditCtrl]);
+        .controller('GamesListCtrl', GamesListCtrl)
+        .controller('GameCtrl', GameCtrl)
+        .controller('GameEditCtrl', GameEditCtrl);
+
+    GamesListCtrl.$inject = ['gamesFactory'];
 
     function GamesListCtrl(gamesFactory) {
         var vm = this;
@@ -19,11 +16,15 @@
         }
     }
 
+    GameCtrl.$inject = ['$routeParams', 'gamesFactory', 'API_SETTINGS'];
+
     function GameCtrl($routeParams, gamesFactory, API_SETTINGS) {
         var vm = this;
         vm.url = API_SETTINGS.API_URL + '/games/' + $routeParams.id;
         vm.data = gamesFactory.get({id: $routeParams.id});
     }
+
+    GameEditCtrl.$inject = ['$routeParams', 'gamesFactory', 'gamesExtrasFactory', 'API_SETTINGS'];
 
     function GameEditCtrl($routeParams, gamesFactory, gamesExtrasFactory, API_SETTINGS) {
         var vm = this;

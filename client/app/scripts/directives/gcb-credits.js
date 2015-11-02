@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbCredits', [gcbCredits]);
+    angular.module('gacobom').directive('gcbCredits', gcbCredits);
 
     function gcbCredits() {
         return {

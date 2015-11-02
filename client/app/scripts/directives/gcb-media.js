@@ -1,29 +1,31 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbMedia', ['API_SETTINGS', 'splashService', gcbMedia]);
+    angular.module('gacobom').directive('gcbMedia', gcbMedia);
 
-    function gcbMedia(API_SETTINGS, splashService) {
+    function gcbMedia() {
         return {
             restrict: 'E',
             templateUrl: 'views/directives/gcb-media.html',
             scope: {
                 items: '='
             },
-            controller: function($scope) {
-                var vm = this;
-                vm.open = openMediaItem;
-
-                function openMediaItem(item) {
-                    splashService.open({
-                        splashImage: API_SETTINGS.API_URL + item.meta.url,
-                        splashText: item.text
-                    });
-                }
-            },
-            controllerAs: 'mediaCtrl',
-            link: function(scope) {
-                scope.apiUrl = API_SETTINGS.API_URL;
-            }
+            controller: MediaCtrl,
+            controllerAs: 'mediaCtrl'
         };
+    }
+
+    MediaCtrl.$inject = ['splashService', 'API_SETTINGS'];
+
+    function MediaCtrl(splashService, API_SETTINGS) {
+        var vm = this;
+        vm.open = openMediaItem;
+        vm.apiUrl = API_SETTINGS.API_URL;
+
+        function openMediaItem(item) {
+            splashService.open({
+                splashImage: API_SETTINGS.API_URL + item.meta.url,
+                splashText: item.text
+            });
+        }
     }
 }());

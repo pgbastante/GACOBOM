@@ -8,8 +8,5 @@
         'ngSanitize',
         'ngResource',
         'ui.splash',
-        'flow'])
-        .constant('API_SETTINGS', {
-            API_URL: 'http://app.gacobom.com'
-        });
+        'flow']);
 }());

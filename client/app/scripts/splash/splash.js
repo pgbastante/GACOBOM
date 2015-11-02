@@ -3,6 +3,8 @@
     angular.module('ui.splash', ['ui.bootstrap'])
         .service('splashService', ['$modal', '$rootScope', splashService]);
 
+    splashService.$inject = ['$modal', '$rootScope'];
+
     function splashService($modal, $rootScope) {
         return {
             open: function(attrs, opts) {

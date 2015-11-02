@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbMetascore', [gcbMetascore]);
+    angular.module('gacobom').directive('gcbMetascore', gcbMetascore);
 
     function gcbMetascore() {
         return {

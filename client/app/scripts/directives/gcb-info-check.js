@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbInfoCheck', [gcbInfoCheck]);
+    angular.module('gacobom').directive('gcbInfoCheck', gcbInfoCheck);
 
     function gcbInfoCheck() {
         return {

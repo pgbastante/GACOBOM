@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbExtraContent', [gcbExtraContent]);
+    angular.module('gacobom').directive('gcbExtraContent', gcbExtraContent);
 
     function gcbExtraContent() {
 

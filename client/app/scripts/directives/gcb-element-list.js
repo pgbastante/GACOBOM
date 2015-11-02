@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbElementList', [gcbElementList]);
+    angular.module('gacobom').directive('gcbElementList', gcbElementList);
 
     function gcbElementList() {
         return {

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbMediaManager', [gcbMediaManager]);
+    angular.module('gacobom').directive('gcbMediaManager', gcbMediaManager);
 
     function gcbMediaManager() {
         return {
@@ -13,25 +13,29 @@
                 title: '@',
                 anchor: '@'
             },
-            controller: function($scope) {
-                var vm = this;
-                vm.remove = remove;
-                vm.uploadVisibility = false;
-                vm.onMediaUpload = onMediaUpload;
-
-                function remove(id) {
-                    $scope.mediaFiles = $.grep($scope.mediaFiles, isMediaId);
-
-                    function isMediaId(e) {
-                        return e.id !== id;
-                    }
-                }
-
-                function onMediaUpload(file, message, flow) {
-                    $scope.mediaFiles.push(JSON.parse(message));
-                }
-            },
+            controller: MediaManagerCtrl,
             controllerAs: 'mediaCtrl'
         };
+    }
+
+    MediaManagerCtrl.$inject = ['$scope'];
+
+    function MediaManagerCtrl($scope) {
+        var vm = this;
+        vm.remove = remove;
+        vm.uploadVisibility = false;
+        vm.onMediaUpload = onMediaUpload;
+
+        function remove(id) {
+            $scope.mediaFiles = $.grep($scope.mediaFiles, isMediaId);
+
+            function isMediaId(e) {
+                return e.id !== id;
+            }
+        }
+
+        function onMediaUpload(file, message, flow) {
+            $scope.mediaFiles.push(JSON.parse(message));
+        }
     }
 }());

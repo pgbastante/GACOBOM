@@ -1,29 +1,35 @@
 (function() {
     'use strict';
-    angular.module('gacobom').directive('gcbCover', ['splashService', gcbCover]);
+    angular.module('gacobom').directive('gcbCover', gcbCover);
 
-    function gcbCover(splashService) {
+    function gcbCover() {
+        function link(scope) {
+            scope.imageUrl = scope.url + '/cover';
+        }
+
         return {
             restrict: 'E',
             templateUrl: 'views/directives/gcb-cover.html',
             scope: {
                 url: '@'
             },
-            controller: function($scope) {
-                var vm = this;
-                vm.open = openSplash;
-
-                function openSplash() {
-                    splashService.open({
-                        splashImage: $scope.url + '/cover'
-                    });
-                }
-            },
+            controller: CoverCtrl,
             controllerAs: 'cover',
-            link: function(scope) {
-                scope.imageUrl = scope.url + '/cover';
-            }
+            link: link
         };
+    }
+
+    CoverCtrl.$inject = ['$scope', 'splashService'];
+
+    function CoverCtrl($scope, splashService) {
+        var vm = this;
+        vm.open = openSplash;
+
+        function openSplash() {
+            splashService.open({
+                splashImage: $scope.url + '/cover'
+            });
+        }
     }
 
 }());
